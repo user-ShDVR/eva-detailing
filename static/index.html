@@ -1,0 +1,2645 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E.V.A.DETAILING — Детейлинг-студия в Сургуте</title>
+    <meta name="description" content="E.V.A.DETAILING — профессиональный детейлинг в Сургуте. Полировка, PPF-плёнки, химчистка салона, керамические покрытия. Записывайтесь онлайн.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Yandex.Metrika counter (replace XXXXXXXX with your counter ID) -->
+    <!--
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r)return;}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+        ym(XXXXXXXX, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    -->
+
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0a0a0f;
+            --glass-bg: rgba(255, 255, 255, 0.04);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-bg-hover: rgba(255, 255, 255, 0.07);
+            --text: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.55);
+            --accent: #336FEF;
+            --accent-light: #5b8ff7;
+            --accent-dark: #1a4fd0;
+        }
+
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ===== Preloader ===== */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .preloader-text {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            overflow: hidden;
+        }
+
+        .preloader-text .char {
+            display: inline-block;
+            transform: translateY(120%);
+            color: var(--accent);
+            opacity: 0;
+        }
+
+        /* ===== Background Blobs ===== */
+        .bg-blobs {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.3;
+            will-change: transform;
+        }
+
+        .blob-1 {
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, #336FEF, transparent 70%);
+            top: -20%; left: -15%;
+        }
+
+        .blob-2 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, #1a4fd0, transparent 70%);
+            top: 30%; right: -20%;
+        }
+
+        .blob-3 {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, #5b8ff7, transparent 70%);
+            bottom: -15%; left: 25%;
+        }
+
+        /* ===== Layout ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section { position: relative; z-index: 1; }
+
+        /* ===== Glass ===== */
+        .glass {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            transition: background 0.5s, border-color 0.5s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass:hover {
+            background: var(--glass-bg-hover);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 20px 0;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 14px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .logo .accent { color: var(--accent); }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--text); }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-phone {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-phone:hover { color: var(--accent); }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+            background: rgba(51, 111, 239, 0.15);
+            border: 1px solid rgba(51, 111, 239, 0.25);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+
+        .nav-cta:hover {
+            background: rgba(51, 111, 239, 0.3);
+            border-color: rgba(51, 111, 239, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .burger span {
+            width: 24px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.3);
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(10,10,15,0.4), rgba(10,10,15,0.9));
+        }
+
+        .hero-content {
+            max-width: 960px;
+            position: relative;
+            z-index: 1;
+            visibility: hidden;
+        }
+
+        .hero-content.ready { visibility: visible; }
+
+        .hero-label {
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            margin-bottom: 48px;
+            opacity: 0;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 8vw, 6.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 32px;
+        }
+
+        .hero h1 .line {
+            display: block;
+            overflow: hidden;
+            padding-bottom: 8px;
+        }
+
+        .hero h1 .line .word {
+            display: inline-block;
+            transform: translateY(120%);
+        }
+
+        .hero h1 .accent-word {
+            color: var(--accent);
+        }
+
+        .hero-sub {
+            font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+            color: var(--text-secondary);
+            max-width: 550px;
+            margin: 0 auto 48px;
+            line-height: 1.8;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            border-radius: 60px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+            background: var(--accent);
+            border: none;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 64px;
+            background: var(--accent);
+            z-index: -1;
+            opacity: 0.4;
+            filter: blur(20px);
+            transition: all 0.5s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        .btn-primary:hover::before {
+            opacity: 0.7;
+            filter: blur(30px);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            border-radius: 60px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text);
+            background: transparent;
+            border: 2px solid rgba(255,255,255,0.2);
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-3px);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .hero-scroll span {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 1; transform: scaleY(1); }
+            50% { opacity: 0.3; transform: scaleY(0.6); }
+        }
+
+        /* ===== Marquee ===== */
+        .marquee-section {
+            padding: 40px 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            will-change: transform;
+        }
+
+        .marquee-content {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            padding: 0 24px;
+            flex-shrink: 0;
+        }
+
+        .marquee-item {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 900;
+            white-space: nowrap;
+            letter-spacing: -0.02em;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+            -webkit-text-fill-color: transparent;
+            transition: all 0.4s;
+        }
+
+        .marquee-item.filled {
+            -webkit-text-fill-color: var(--text);
+            -webkit-text-stroke: 0;
+        }
+
+        .marquee-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+            opacity: 0.5;
+        }
+
+        /* ===== About ===== */
+        .about { padding: 140px 0; }
+
+        .about-card {
+            padding: 64px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+            clip-path: inset(15% 15% 15% 15% round 24px);
+        }
+
+        .about-text h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+            line-height: 1.15;
+        }
+
+        .about-text h2 .split-line {
+            display: block;
+            overflow: hidden;
+        }
+
+        .about-text h2 .split-line span { display: inline-block; }
+
+        .about-text h2 .highlight { color: var(--accent); }
+
+        .about-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat {
+            padding: 32px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stat:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-6px);
+        }
+
+        .stat-number {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* ===== Section Headers ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .section-title .word { display: inline-block; }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* ===== Services with Tabs ===== */
+        .services { padding: 140px 0; }
+
+        .services-tabs {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .tab-btn {
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .tab-btn:hover {
+            color: var(--text);
+            background: var(--glass-bg-hover);
+        }
+
+        .tab-btn.active {
+            color: #fff;
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .tab-content {
+            position: relative;
+            min-height: 400px;
+        }
+
+        .tab-panel {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(30px);
+        }
+
+        .tab-panel.active {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .service-info h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .service-info p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .service-tag {
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+        }
+
+        .service-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .service-step {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 20px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s;
+        }
+
+        .service-step:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .step-num {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(51, 111, 239, 0.15);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .step-text h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .step-text p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ===== Process ===== */
+        .process { padding: 140px 0; }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .process-card {
+            padding: 40px 28px;
+            text-align: center;
+            position: relative;
+        }
+
+        .process-num {
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(51, 111, 239, 0.15);
+            margin-bottom: 16px;
+            line-height: 1;
+        }
+
+        .process-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .process-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ===== Before/After ===== */
+        .before-after { padding: 140px 0; }
+
+        .ba-slider-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .ba-slider {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/10;
+            border-radius: 24px;
+            overflow: hidden;
+            cursor: ew-resize;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .ba-slider img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ba-after {
+            clip-path: inset(0 50% 0 0);
+        }
+
+        .ba-handle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: #fff;
+            transform: translateX(-50%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .ba-handle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .ba-handle::after {
+            content: '⟨  ⟩';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--bg);
+            z-index: 1;
+            letter-spacing: 4px;
+        }
+
+        .ba-label {
+            position: absolute;
+            bottom: 20px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .ba-label-before { left: 20px; }
+        .ba-label-after { right: 20px; }
+
+        .ba-nav {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+
+        .ba-nav-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .ba-nav-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .ba-case-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .ba-case-info h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .ba-case-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* ===== Gallery ===== */
+        .gallery { padding: 140px 0; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,10,15,0.7), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .gallery-item:hover::after { opacity: 1; }
+
+        /* ===== CTA ===== */
+        .cta {
+            padding: 140px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-card {
+            padding: 100px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(51, 111, 239, 0.08), rgba(26, 79, 208, 0.08));
+            border-radius: 24px;
+        }
+
+        .cta h2 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .cta p {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        /* ===== Contacts ===== */
+        .contacts { padding: 140px 0; }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .contacts-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(51, 111, 239, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 22px;
+            height: 22px;
+            color: var(--accent);
+        }
+
+        .contact-text h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-text p,
+        .contact-text a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-text a:hover { color: var(--accent); }
+
+        .contacts-map {
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .contacts-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(1) invert(1) brightness(0.8) contrast(1.2);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            padding: 48px 0;
+            border-top: 1px solid var(--glass-border);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copy {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover { color: var(--text); }
+
+        /* ===== Sticky Social FAB ===== */
+        .social-fab {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .fab-trigger {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 24px rgba(51, 111, 239, 0.4);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .fab-trigger:hover {
+            transform: scale(1.1);
+        }
+
+        .fab-trigger svg {
+            width: 24px;
+            height: 24px;
+            color: #fff;
+            transition: transform 0.3s;
+        }
+
+        .social-fab.open .fab-trigger svg {
+            transform: rotate(45deg);
+        }
+
+        .fab-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(20px) scale(0.8);
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .social-fab.open .fab-items {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+
+        .fab-item {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .fab-item svg {
+            width: 20px;
+            height: 20px;
+            color: #fff;
+        }
+
+        .fab-item:hover { transform: scale(1.15); }
+
+        .fab-wa { background: #25D366; }
+        .fab-tg { background: #2AABEE; }
+        .fab-ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .fab-vk { background: #0077FF; }
+
+        /* ===== Booking Modal ===== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            padding: 24px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: #12121a;
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            transform: scale(0.9) translateY(30px);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-overlay.active .modal {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: var(--glass-bg-hover);
+            color: var(--text);
+        }
+
+        .modal h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .modal .modal-sub {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--glass-border);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23888' stroke-width='1.5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .form-group select option {
+            background: #12121a;
+            color: var(--text);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 20px 0 24px;
+        }
+
+        .form-consent input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            accent-color: var(--accent);
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .form-consent label {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            cursor: pointer;
+        }
+
+        .form-consent a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .form-consent a:hover {
+            text-decoration: underline;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            border-radius: 14px;
+            background: var(--accent);
+            color: #fff;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+
+        .form-submit:hover:not(:disabled) {
+            filter: brightness(1.15);
+            transform: translateY(-2px);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .form-success {
+            text-align: center;
+            padding: 40px 0;
+            display: none;
+        }
+
+        .form-success.show { display: block; }
+
+        .form-success .check {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .form-success h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .form-success p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ===== Privacy Modal ===== */
+        .privacy-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1001;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            padding: 24px;
+        }
+
+        .privacy-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .privacy-modal {
+            background: #12121a;
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .privacy-modal h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .privacy-modal h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 20px 0 8px;
+        }
+
+        .privacy-modal p,
+        .privacy-modal li {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .privacy-modal ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        /* ===== Mobile Nav ===== */
+        .mobile-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 99;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(24px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+        }
+
+        .mobile-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .mobile-nav a:hover { color: var(--accent); }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .nav-links, .nav-phone { display: none; }
+            .burger { display: flex; }
+
+            .about-card {
+                grid-template-columns: 1fr;
+                padding: 36px 24px;
+                gap: 32px;
+            }
+
+            .about-stats { gap: 12px; }
+            .stat { padding: 20px 16px; }
+            .stat-number { font-size: 1.8rem; }
+
+            .service-detail { grid-template-columns: 1fr; }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+
+            .contacts-grid { grid-template-columns: 1fr; }
+
+            .cta-card { padding: 64px 24px; }
+
+            .hero { padding: 100px 20px 60px; }
+            .hero-scroll { display: none; }
+
+            .about, .services, .process, .before-after, .gallery, .cta, .contacts {
+                padding: 80px 0;
+            }
+
+            .footer .container {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .marquee-item { font-size: 2rem; }
+
+            .modal { padding: 32px 24px; }
+
+            .social-fab { bottom: 20px; right: 20px; }
+
+            .hero-buttons { flex-direction: column; align-items: center; }
+
+            .btn-primary, .btn-outline {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .tab-content { min-height: auto; }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-text">
+            <span class="char">E</span><span class="char">.</span><span class="char">V</span><span class="char">.</span><span class="char">A</span><span class="char">.</span>
+        </div>
+    </div>
+
+    <!-- Background Blobs -->
+    <div class="bg-blobs">
+        <div class="blob blob-1" data-speed="0.03"></div>
+        <div class="blob blob-2" data-speed="0.05"></div>
+        <div class="blob blob-3" data-speed="0.04"></div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#services" data-nav>Услуги</a>
+        <a href="#cases" data-nav>Кейсы</a>
+        <a href="#about" data-nav>О нас</a>
+        <a href="#contacts" data-nav>Контакты</a>
+        <a href="tel:+79519808777">+7 951 980 87 77</a>
+        <button class="btn-primary" data-open-modal>Записаться</button>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="accent">E.V.A.</span>DETAILING
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services" data-nav>Услуги</a></li>
+                <li><a href="#cases" data-nav>Кейсы</a></li>
+                <li><a href="#about" data-nav>О нас</a></li>
+                <li><a href="#contacts" data-nav>Контакты</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="tel:+79519808777" class="nav-phone">+7 951 980 87 77</a>
+                <button class="nav-cta" data-open-modal>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    <span>Записаться</span>
+                </button>
+            </div>
+            <button class="burger" id="burger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="imgs/FullSizeRender.JPG" alt="E.V.A.DETAILING studio" loading="eager">
+        </div>
+        <div class="hero-content">
+            <div class="hero-label">Детейлинг-студия в Сургуте</div>
+            <h1>
+                <span class="line"><span class="word">Безупречный</span></span>
+                <span class="line"><span class="word accent-word" id="heroAccent">детейлинг</span></span>
+            </h1>
+            <p class="hero-sub">Лучшее, что может случиться с&nbsp;вашим автомобилем. Полировка, защитные плёнки, химчистка и&nbsp;керамические покрытия.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" data-open-modal>
+                    Записаться
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="tel:+79519808777" class="btn-outline">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    Позвонить
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Marquee 1 -->
+    <div class="marquee-section">
+        <div class="marquee-track" data-direction="-1" data-speed="1">
+            <div class="marquee-content">
+                <span class="marquee-item filled">ДЕТЕЙЛИНГ</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">ПОЛИРОВКА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">КЕРАМИКА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">PPF</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">E.V.A.</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">ЗАЩИТА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">СУРГУТ</span>
+                <span class="marquee-dot"></span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span class="marquee-item filled">ДЕТЕЙЛИНГ</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">ПОЛИРОВКА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">КЕРАМИКА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">PPF</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">E.V.A.</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">ЗАЩИТА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">СУРГУТ</span>
+                <span class="marquee-dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-card glass">
+                <div class="about-text">
+                    <h2>
+                        <span class="split-line"><span>Забота о вашем</span></span>
+                        <span class="split-line"><span class="highlight">автомобиле</span></span>
+                    </h2>
+                    <p>E.V.A.DETAILING — это профессиональная детейлинг-студия в&nbsp;Сургуте. Мы&nbsp;используем премиальные материалы и&nbsp;современное оборудование, чтобы ваш автомобиль выглядел безупречно. Каждый проект для нас&nbsp;— это индивидуальный подход и&nbsp;внимание к&nbsp;мельчайшим деталям.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Лет опыта</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Довольных клиентов</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Премиум материалы</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">24м</div>
+                        <div class="stat-label">Гарантия на покрытия</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><span class="word">Наши</span> <span class="word">услуги</span></h2>
+                <p class="section-subtitle">Полный спектр детейлинг-услуг для вашего автомобиля</p>
+            </div>
+
+            <div class="services-tabs">
+                <button class="tab-btn active" data-tab="polish">Полировка</button>
+                <button class="tab-btn" data-tab="ppf">PPF-плёнки</button>
+                <button class="tab-btn" data-tab="clean">Химчистка</button>
+                <button class="tab-btn" data-tab="extra">Доп. услуги</button>
+            </div>
+
+            <div class="tab-content">
+                <!-- Полировка -->
+                <div class="tab-panel active" data-panel="polish">
+                    <div class="service-detail">
+                        <div class="service-info">
+                            <h3>Полировка и защитные покрытия</h3>
+                            <p>Восстанавливаем заводской блеск и&nbsp;защищаем лакокрасочное покрытие от&nbsp;внешних воздействий. Используем профессиональные составы и&nbsp;керамические покрытия с&nbsp;гарантией до&nbsp;24&nbsp;месяцев.</p>
+                            <div class="service-tags">
+                                <span class="service-tag">Восстановительная</span>
+                                <span class="service-tag">Защитная</span>
+                                <span class="service-tag">Керамика</span>
+                                <span class="service-tag">Жидкое стекло</span>
+                            </div>
+                        </div>
+                        <div class="service-steps">
+                            <div class="service-step">
+                                <div class="step-num">1</div>
+                                <div class="step-text">
+                                    <h4>Осмотр и диагностика</h4>
+                                    <p>Оценка состояния ЛКП, замер толщины покрытия</p>
+                                </div>
+                            </div>
+                            <div class="service-step">
+                                <div class="step-num">2</div>
+                                <div class="step-text">
+                                    <h4>Подготовка поверхности</h4>
+                                    <p>Мойка, деконтаминация, маскировка элементов</p>
+                                </div>
+                            </div>
+                            <div class="service-step">
+                                <div class="step-num">3</div>
+                                <div class="step-text">
+                                    <h4>Многоэтапная полировка</h4>
+                                    <p>Абразивная и финишная полировка роторной и DA машинкой</p>
+                                </div>
+                            </div>
+                            <div class="service-step">
+                                <div class="step-num">4</div>
+                                <div class="step-text">
+                                    <h4>Нанесение защиты</h4>
+                                    <p>Керамическое покрытие или жидкое стекло с ИК-сушкой</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PPF -->
+                <div class="tab-panel" data-panel="ppf">
+                    <div class="service-detail">
+                        <div class="service-info">
+                            <h3>Антигравийные плёнки (PPF)</h3>
+                            <p>Защита кузова от сколов, царапин и&nbsp;гравия прозрачной полиуретановой плёнкой. Оклейка отдельных зон или полная защита всего кузова.</p>
+                            <div class="service-tags">
+                                <span class="service-tag">Полная оклейка</span>
+                                <span class="service-tag">Частичная</span>
+                                <span class="service-tag">Капот и бампер</span>
+                                <span class="service-tag">Фары</span>
+                            </div>
+                        </div>
+                        <div class="service-steps">
+                            <div class="service-step">
+                                <div class="step-num">1</div>
+                                <div class="step-text">
+                                    <h4>Замер и раскрой</h4>
+                                    <p>Подбор плёнки, компьютерный раскрой по лекалам</p>
+                                </div>
+                            </div>
+                            <div class="service-step">
+                                <div class="step-num">2</div>
+                                <div class="step-text">
+                                    <h4>Подготовка кузова</h4>
+                                    <p>Мойка, полировка проблемных зон, обезжиривание</p>
+                                </div>
+                            </div>
+                            <div class="service-step">
+                                <div class="step-num">3</div>
+                                <div class="step-text">
+                                    <h4>Оклейка</h4>
+                                    <p>Нанесение плёнки с подворотами, без видимых стыков</p>
+                                </div>
+                            </div>
+                            <div class="service-step">
+                                <div class="step-num">4</div>
+                                <div class="step-text">
+                                    <h4>Финишная обработка</h4>
+                                    <p>Прогрев феном, прикатка, контроль краёв</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Химчистка -->
+                <div class="tab-panel" data-panel="clean">
+                    <div class="service-detail">
+                        <div class="service-info">
+                            <h3>Химчистка салона</h3>
+                            <p>Глубокая очистка интерьера с&nbsp;использованием профессиональных составов. Работаем с&nbsp;кожей, тканью, алькантарой. Удаление пятен, запахов, восстановление внешнего вида.</p>
+                            <div class="service-tags">
+                                <span class="service-tag">Полная химчистка</span>
+                                <span class="service-tag">Потолок</span>
+                                <span class="service-tag">Кожа</span>
+                                <span class="service-tag">Мойка двигателя</span>
+                            </div>
+                        </div>
+                        <div class="service-steps">
+                            <div class="service-step">
+                                <div class="step-num">1</div>
+                                <div class="step-text">
+                                    <h4>Пылесос и продувка</h4>
+                                    <p>Удаление крупного мусора, пыли из щелей</p>
+                                </div>
+                            </div>
+                            <div class="service-step">
+                                <div class="step-num">2</div>
+                                <div class="step-text">
+                                    <h4>Нанесение составов</h4>
+                                    <p>Подбор химии под тип материала, обработка поверхностей</p>
+                                </div>
+                            </div>
+                            <div class="service-step">
+                                <div class="step-num">3</div>
+                                <div class="step-text">
+                                    <h4>Экстракция и сушка</h4>
+                                    <p>Вытягивание грязи торнадором и экстрактором, сушка озоном</p>
+                                </div>
+                            </div>
+                            <div class="service-step">
+                                <div class="step-num">4</div>
+                                <div class="step-text">
+                                    <h4>Консервация</h4>
+                                    <p>Защитные составы для кожи и пластика, антистатик</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Доп. услуги -->
+                <div class="tab-panel" data-panel="extra">
+                    <div class="service-detail">
+                        <div class="service-info">
+                            <h3>Дополнительные услуги</h3>
+                            <p>Комплексный уход за автомобилем: от&nbsp;тонировки стёкол до&nbsp;защитных покрытий для колёсных дисков. Каждая деталь имеет значение.</p>
+                            <div class="service-tags">
+                                <span class="service-tag">Тонировка</span>
+                                <span class="service-tag">Чернение</span>
+                                <span class="service-tag">Защита стёкол</span>
+                                <span class="service-tag">Антидождь</span>
+                            </div>
+                        </div>
+                        <div class="service-steps">
+                            <div class="service-step">
+                                <div class="step-num">1</div>
+                                <div class="step-text">
+                                    <h4>Тонировка</h4>
+                                    <p>Атермальная и классическая тонировка стёкол</p>
+                                </div>
+                            </div>
+                            <div class="service-step">
+                                <div class="step-num">2</div>
+                                <div class="step-text">
+                                    <h4>Чернение пластика</h4>
+                                    <p>Восстановление цвета молдингов и пластиковых элементов</p>
+                                </div>
+                            </div>
+                            <div class="service-step">
+                                <div class="step-num">3</div>
+                                <div class="step-text">
+                                    <h4>Защита стёкол</h4>
+                                    <p>Водоотталкивающее покрытие «антидождь» на все стёкла</p>
+                                </div>
+                            </div>
+                            <div class="service-step">
+                                <div class="step-num">4</div>
+                                <div class="step-text">
+                                    <h4>Защита дисков</h4>
+                                    <p>Керамическое покрытие колёсных дисков от реагентов</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee 2 -->
+    <div class="marquee-section">
+        <div class="marquee-track" data-direction="1" data-speed="0.8">
+            <div class="marquee-content">
+                <span class="marquee-item">ХИМЧИСТКА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">ОКЛЕЙКА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">ТОНИРОВКА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">АНТИДОЖДЬ</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">КЕРАМИКА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">БЛЕСК</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">ЧЕРНЕНИЕ</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">КАЧЕСТВО</span>
+                <span class="marquee-dot"></span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span class="marquee-item">ХИМЧИСТКА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">ОКЛЕЙКА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">ТОНИРОВКА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">АНТИДОЖДЬ</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">КЕРАМИКА</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">БЛЕСК</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item">ЧЕРНЕНИЕ</span>
+                <span class="marquee-dot"></span>
+                <span class="marquee-item filled">КАЧЕСТВО</span>
+                <span class="marquee-dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Process -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><span class="word">Как</span> <span class="word">мы</span> <span class="word">работаем</span></h2>
+                <p class="section-subtitle">Прозрачный процесс от записи до выдачи автомобиля</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-card glass">
+                    <div class="process-num">01</div>
+                    <h3>Осмотр</h3>
+                    <p>Диагностика состояния кузова и салона, замер толщины ЛКП</p>
+                </div>
+                <div class="process-card glass">
+                    <div class="process-num">02</div>
+                    <h3>Согласование</h3>
+                    <p>Обсуждаем объём работ, сроки и стоимость</p>
+                </div>
+                <div class="process-card glass">
+                    <div class="process-num">03</div>
+                    <h3>Подготовка</h3>
+                    <p>Мойка, деконтаминация, маскировка элементов</p>
+                </div>
+                <div class="process-card glass">
+                    <div class="process-num">04</div>
+                    <h3>Выполнение</h3>
+                    <p>Проведение детейлинг-работ опытными мастерами</p>
+                </div>
+                <div class="process-card glass">
+                    <div class="process-num">05</div>
+                    <h3>Контроль</h3>
+                    <p>Проверка качества при специальном освещении</p>
+                </div>
+                <div class="process-card glass">
+                    <div class="process-num">06</div>
+                    <h3>Выдача</h3>
+                    <p>Демонстрация результата и рекомендации по уходу</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After -->
+    <section class="before-after" id="cases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><span class="word">До</span> <span class="word">и</span> <span class="word">после</span></h2>
+                <p class="section-subtitle">Результаты наших работ говорят сами за себя</p>
+            </div>
+            <div class="ba-slider-container">
+                <div class="ba-slider" id="baSlider">
+                    <img src="imgs/IMG_6008.JPG" alt="До" class="ba-before">
+                    <img src="imgs/IMG_0240.JPG" alt="После" class="ba-after">
+                    <div class="ba-handle" id="baHandle"></div>
+                    <span class="ba-label ba-label-before">До</span>
+                    <span class="ba-label ba-label-after">После</span>
+                </div>
+                <div class="ba-case-info">
+                    <h4 id="baCar">BMW 5 Series</h4>
+                    <p id="baWork">Мойка двигателя + полировка кузова</p>
+                </div>
+                <div class="ba-nav" id="baNav">
+                    <button class="ba-nav-btn active" data-case="0"></button>
+                    <button class="ba-nav-btn" data-case="1"></button>
+                    <button class="ba-nav-btn" data-case="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><span class="word">Портфолио</span></h2>
+                <p class="section-subtitle">Наши работы в детейлинг-студии</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="imgs/IMG_0240.JPG" alt="Mercedes GLS" loading="lazy"></div>
+                <div class="gallery-item"><img src="imgs/IMG_0243.JPG" alt="Детейлинг" loading="lazy"></div>
+                <div class="gallery-item"><img src="imgs/IMG_1845.JPG" alt="Студия" loading="lazy"></div>
+                <div class="gallery-item"><img src="imgs/IMG_1848.JPG" alt="Работа" loading="lazy"></div>
+                <div class="gallery-item"><img src="imgs/IMG_0353.JPG" alt="Полировка" loading="lazy"></div>
+                <div class="gallery-item"><img src="imgs/IMG_9886.JPG" alt="Результат" loading="lazy"></div>
+                <div class="gallery-item"><img src="imgs/IMG_9887.JPG" alt="Детейлинг" loading="lazy"></div>
+                <div class="gallery-item"><img src="imgs/IMG_0370.JPG" alt="Оклейка" loading="lazy"></div>
+                <div class="gallery-item"><img src="imgs/IMG_7242.JPG" alt="Студия E.V.A." loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta-card glass">
+                <h2>Готовы преобразить ваш автомобиль?</h2>
+                <p>Оставьте заявку — мы свяжемся с вами и подберём оптимальный комплекс услуг</p>
+                <button class="btn-primary" data-open-modal style="position:relative;">
+                    <span>Записаться на детейлинг</span>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts -->
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><span class="word">Контакты</span></h2>
+                <p class="section-subtitle">Приезжайте — покажем студию лично</p>
+            </div>
+            <div class="contacts-grid">
+                <div class="contacts-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Адрес</h4>
+                            <p>г. Сургут, ул. Аэрофлотская 30, стр. 2<br>Детейлинг-центр на АЗК</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Телефон</h4>
+                            <a href="tel:+79519808777">+7 951 980 87 77</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Режим работы</h4>
+                            <p>Пн-Сб: 09:00 — 18:00<br>Вс: выходной</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts-map">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5c7e4b2e2d3c4a5f6b7c8d9e0f1a2b3c&amp;source=constructor&amp;ll=73.3979%2C61.2500&amp;z=15&amp;pt=73.3979%2C61.2500" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <span class="footer-copy">&copy; 2026 E.V.A.DETAILING. Сургут.</span>
+            <div class="footer-links">
+                <a href="#" class="footer-link" id="footerPrivacy">Политика конфиденциальности</a>
+                <a href="tel:+79519808777" class="footer-link">+7 951 980 87 77</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Social FAB -->
+    <div class="social-fab" id="socialFab">
+        <div class="fab-items">
+            <a href="https://wa.me/79519808777" target="_blank" class="fab-item fab-wa" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="https://t.me/evadetailingsurgut" target="_blank" class="fab-item fab-tg" aria-label="Telegram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="https://instagram.com/evadetailingsurgut" target="_blank" class="fab-item fab-ig" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://vk.com/evadetailingsurgut" target="_blank" class="fab-item fab-vk" aria-label="VK">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.863 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.204.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.254-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z"/></svg>
+            </a>
+        </div>
+        <button class="fab-trigger" aria-label="Связаться с нами">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </button>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+
+            <div id="bookingForm">
+                <h2>Записаться</h2>
+                <p class="modal-sub">Оставьте заявку — мы перезвоним в течение 15 минут</p>
+
+                <div class="form-group">
+                    <label for="formName">Имя *</label>
+                    <input type="text" id="formName" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label for="formPhone">Телефон *</label>
+                    <input type="tel" id="formPhone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="formCar">Автомобиль</label>
+                    <input type="text" id="formCar" placeholder="Марка и модель">
+                </div>
+                <div class="form-group">
+                    <label for="formService">Услуга</label>
+                    <select id="formService">
+                        <option value="">Выберите услугу</option>
+                        <option value="Полировка">Полировка</option>
+                        <option value="Керамическое покрытие">Керамическое покрытие</option>
+                        <option value="PPF-плёнка">PPF-плёнка (антигравий)</option>
+                        <option value="Химчистка салона">Химчистка салона</option>
+                        <option value="Мойка двигателя">Мойка двигателя</option>
+                        <option value="Тонировка">Тонировка</option>
+                        <option value="Другое">Другое</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="formComment">Комментарий</label>
+                    <textarea id="formComment" placeholder="Расскажите подробнее о задаче"></textarea>
+                </div>
+
+                <div class="form-consent">
+                    <input type="checkbox" id="formConsent">
+                    <label for="formConsent">Нажимая кнопку, я даю <a href="#" id="privacyLink">согласие на обработку персональных данных</a> в соответствии с Федеральным законом №152-ФЗ</label>
+                </div>
+
+                <button class="form-submit" id="formSubmit" disabled>Отправить заявку</button>
+            </div>
+
+            <div class="form-success" id="formSuccess">
+                <div class="check">&#10003;</div>
+                <h3>Заявка отправлена!</h3>
+                <p>Мы перезвоним вам в ближайшее время</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="privacy-overlay" id="privacyModal">
+        <div class="privacy-modal">
+            <button class="modal-close" id="privacyClose">&times;</button>
+            <h2>Политика конфиденциальности</h2>
+
+            <h3>1. Общие положения</h3>
+            <p>Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта E.V.A.DETAILING (далее — Оператор).</p>
+
+            <h3>2. Собираемые данные</h3>
+            <p>При заполнении формы на сайте мы собираем следующие данные:</p>
+            <ul>
+                <li>Имя</li>
+                <li>Номер телефона</li>
+                <li>Информация об автомобиле (по желанию)</li>
+                <li>Выбранная услуга</li>
+                <li>Комментарий (по желанию)</li>
+            </ul>
+
+            <h3>3. Цели обработки</h3>
+            <p>Персональные данные обрабатываются в следующих целях:</p>
+            <ul>
+                <li>Связь с клиентом для записи на услугу</li>
+                <li>Информирование о статусе заказа</li>
+                <li>Улучшение качества обслуживания</li>
+            </ul>
+
+            <h3>4. Срок хранения</h3>
+            <p>Персональные данные хранятся в течение 1 года с момента последнего обращения, после чего удаляются. Пользователь может запросить удаление своих данных в любой момент.</p>
+
+            <h3>5. Передача данных третьим лицам</h3>
+            <p>Оператор не передаёт персональные данные третьим лицам, за исключением случаев, предусмотренных законодательством Российской Федерации.</p>
+
+            <h3>6. Защита данных</h3>
+            <p>Оператор принимает необходимые организационные и технические меры для защиты персональных данных от несанкционированного доступа, уничтожения, изменения, блокирования, копирования и распространения.</p>
+
+            <h3>7. Права субъекта</h3>
+            <p>В соответствии с Федеральным законом №152-ФЗ «О персональных данных» вы имеете право:</p>
+            <ul>
+                <li>Запросить информацию о своих персональных данных</li>
+                <li>Потребовать уточнение, блокирование или уничтожение данных</li>
+                <li>Отозвать согласие на обработку персональных данных</li>
+            </ul>
+            <p>Для реализации указанных прав свяжитесь с нами по телефону +7 951 980 87 77.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script>
+    (() => {
+        'use strict';
+
+        // ============================
+        // Analytics Tracker
+        // ============================
+        const analytics = {
+            sections: new Set(),
+            tabs: [],
+            startTime: performance.now(),
+            getTimeOnSite() {
+                return Math.round((performance.now() - this.startTime) / 1000);
+            },
+            getData() {
+                return {
+                    sections: [...this.sections],
+                    tabs: this.tabs,
+                    timeOnSite: this.getTimeOnSite()
+                };
+            }
+        };
+
+        // Track section visibility
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const name = entry.target.dataset.trackName || entry.target.id;
+                    if (name) analytics.sections.add(name);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
+
+        // ============================
+        // Init GSAP + Lenis
+        // ============================
+        gsap.registerPlugin(ScrollTrigger);
+
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smooth: true,
+        });
+
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => lenis.raf(time * 1000));
+        gsap.ticker.lagSmoothing(0);
+
+        // ============================
+        // Preloader
+        // ============================
+        const preloader = document.getElementById('preloader');
+        const preloaderChars = preloader.querySelectorAll('.char');
+        lenis.stop();
+
+        const preloaderTl = gsap.timeline({
+            onComplete: () => {
+                gsap.to(preloader, {
+                    clipPath: 'inset(0 0 100% 0)',
+                    duration: 0.8,
+                    ease: 'power3.inOut',
+                    onComplete: () => {
+                        preloader.style.display = 'none';
+                        lenis.start();
+                        heroReveal();
+                    }
+                });
+            }
+        });
+
+        preloaderTl.to(preloaderChars, {
+            y: 0, opacity: 1,
+            duration: 0.7, stagger: 0.1,
+            ease: 'power4.out', delay: 0.2,
+        }).to({}, { duration: 0.4 });
+
+        // ============================
+        // Hero Reveal
+        // ============================
+        function heroReveal() {
+            document.querySelector('.hero-content').classList.add('ready');
+            const tl = gsap.timeline();
+
+            tl.to('.hero-label', { opacity: 1, duration: 0.6, ease: 'power3.out' });
+
+            // Split accent word
+            const accent = document.getElementById('heroAccent');
+            const text = accent.textContent;
+            accent.innerHTML = '';
+            text.split('').forEach(ch => {
+                const span = document.createElement('span');
+                span.className = 'char';
+                span.textContent = ch;
+                span.style.cssText = 'display:inline-block;transform:translateY(120%);color:var(--accent);';
+                accent.appendChild(span);
+            });
+
+            const line1Words = document.querySelectorAll('.hero h1 .line:first-child .word');
+            tl.to(line1Words, { y: 0, duration: 0.8, stagger: 0.12, ease: 'power4.out' }, '-=0.3');
+            tl.to('#heroAccent .char', { y: 0, duration: 0.7, stagger: 0.04, ease: 'power4.out' }, '-=0.4');
+            tl.to('.hero-sub', { opacity: 1, duration: 0.6, ease: 'power3.out' }, '-=0.3');
+            tl.to('.hero-buttons', { opacity: 1, duration: 0.6, ease: 'power3.out' }, '-=0.3');
+            tl.to('.hero-scroll', { opacity: 0.6, duration: 0.8, ease: 'power2.out' }, '-=0.2');
+
+            gsap.to('.hero-content', {
+                y: -150, opacity: 0, ease: 'none',
+                scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+            });
+
+            gsap.to('.hero-scroll', {
+                opacity: 0, ease: 'none',
+                scrollTrigger: { trigger: '.hero', start: '80% bottom', end: '90% bottom', scrub: true }
+            });
+        }
+
+        // ============================
+        // Blob Parallax
+        // ============================
+        document.querySelectorAll('.blob').forEach(blob => {
+            const speed = parseFloat(blob.dataset.speed) || 0.05;
+            gsap.to(blob, {
+                y: () => window.innerHeight * speed * 10,
+                ease: 'none',
+                scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 1 }
+            });
+        });
+
+        // ============================
+        // Marquee
+        // ============================
+        document.querySelectorAll('.marquee-track').forEach(track => {
+            const direction = parseFloat(track.dataset.direction) || -1;
+            const speed = parseFloat(track.dataset.speed) || 1;
+            const content = track.querySelector('.marquee-content');
+            const contentWidth = content.offsetWidth;
+
+            gsap.set(track, { x: direction === -1 ? 0 : -contentWidth });
+
+            const marqueeAnim = gsap.to(track, {
+                x: direction === -1 ? -contentWidth : 0,
+                duration: 30 / speed, ease: 'none', repeat: -1,
+            });
+
+            let scrollVelocity = 0;
+            lenis.on('scroll', (e) => { scrollVelocity = Math.abs(e.velocity); });
+            gsap.ticker.add(() => {
+                marqueeAnim.timeScale(1 + scrollVelocity * 0.3);
+                scrollVelocity *= 0.95;
+            });
+        });
+
+        // ============================
+        // About — clip-path reveal
+        // ============================
+        gsap.to('.about-card', {
+            clipPath: 'inset(0% 0% 0% 0% round 24px)',
+            ease: 'power2.out',
+            scrollTrigger: { trigger: '.about', start: 'top 80%', end: 'top 30%', scrub: 1 }
+        });
+
+        gsap.utils.toArray('.about-text .split-line span').forEach(line => {
+            gsap.from(line, {
+                y: '100%', duration: 0.8, ease: 'power4.out',
+                scrollTrigger: { trigger: line.closest('.split-line'), start: 'top 85%', toggleActions: 'play none none none' }
+            });
+        });
+
+        gsap.from('.about-text p', {
+            opacity: 0, y: 30, duration: 0.8, ease: 'power3.out',
+            scrollTrigger: { trigger: '.about-text p', start: 'top 85%', toggleActions: 'play none none none' }
+        });
+
+        gsap.fromTo('.stat', { opacity: 0, y: 40, scale: 0.9 }, {
+            opacity: 1, y: 0, scale: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out',
+            scrollTrigger: { trigger: '.about', start: 'top 40%', toggleActions: 'play none none none' }
+        });
+
+        // ============================
+        // Section headers
+        // ============================
+        gsap.utils.toArray('.section-title .word').forEach((word, i) => {
+            gsap.from(word, {
+                y: '100%', opacity: 0, duration: 0.7, delay: i * 0.1, ease: 'power4.out',
+                scrollTrigger: {
+                    trigger: word.closest('.section-header'),
+                    start: 'top 85%', toggleActions: 'play none none none'
+                }
+            });
+        });
+
+        gsap.utils.toArray('.section-subtitle').forEach(sub => {
+            gsap.from(sub, {
+                opacity: 0, y: 20, duration: 0.6, ease: 'power3.out',
+                scrollTrigger: { trigger: sub, start: 'top 90%', toggleActions: 'play none none none' }
+            });
+        });
+
+        // ============================
+        // Services — Tabs
+        // ============================
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.dataset.tab;
+                analytics.tabs.push(target);
+
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                tabPanels.forEach(panel => {
+                    if (panel.dataset.panel === target) {
+                        panel.classList.add('active');
+                        gsap.fromTo(panel, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' });
+                    } else {
+                        panel.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Service steps stagger
+        gsap.from('.tab-panel.active .service-step', {
+            opacity: 0, x: 30, duration: 0.5, stagger: 0.1, ease: 'power3.out',
+            scrollTrigger: { trigger: '.services', start: 'top 60%', toggleActions: 'play none none none' }
+        });
+
+        // ============================
+        // Process cards
+        // ============================
+        gsap.from('.process-card', {
+            opacity: 0, y: 60, scale: 0.95,
+            duration: 0.8, stagger: 0.12, ease: 'power3.out',
+            scrollTrigger: { trigger: '.process-grid', start: 'top 82%', toggleActions: 'play none none none' }
+        });
+
+        // ============================
+        // Before/After Slider
+        // ============================
+        const baSlider = document.getElementById('baSlider');
+        const baAfter = baSlider.querySelector('.ba-after');
+        const baHandle = document.getElementById('baHandle');
+        let isDragging = false;
+
+        function updateSlider(x) {
+            const rect = baSlider.getBoundingClientRect();
+            let percent = ((x - rect.left) / rect.width) * 100;
+            percent = Math.max(5, Math.min(95, percent));
+            baAfter.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+            baHandle.style.left = percent + '%';
+        }
+
+        baSlider.addEventListener('mousedown', (e) => { isDragging = true; updateSlider(e.clientX); });
+        baSlider.addEventListener('touchstart', (e) => { isDragging = true; updateSlider(e.touches[0].clientX); }, { passive: true });
+        window.addEventListener('mousemove', (e) => { if (isDragging) updateSlider(e.clientX); });
+        window.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0].clientX); }, { passive: true });
+        window.addEventListener('mouseup', () => { isDragging = false; });
+        window.addEventListener('touchend', () => { isDragging = false; });
+
+        // B/A cases data (placeholder)
+        const baCases = [
+            { before: 'imgs/IMG_6008.JPG', after: 'imgs/IMG_0240.JPG', car: 'BMW 5 Series', work: 'Мойка двигателя + полировка кузова' },
+            { before: 'imgs/IMG_0241.JPG', after: 'imgs/IMG_0243.JPG', car: 'Mercedes GLS', work: 'Восстановительная полировка' },
+            { before: 'imgs/IMG_0244.JPG', after: 'imgs/IMG_0245.JPG', car: 'Porsche Cayenne', work: 'PPF-оклейка + керамика' },
+        ];
+
+        const baNavBtns = document.querySelectorAll('.ba-nav-btn');
+        const baCar = document.getElementById('baCar');
+        const baWork = document.getElementById('baWork');
+
+        function switchCase(index) {
+            const c = baCases[index];
+            baSlider.querySelector('.ba-before').src = c.before;
+            baSlider.querySelector('.ba-after').src = c.after;
+            baCar.textContent = c.car;
+            baWork.textContent = c.work;
+
+            baAfter.style.clipPath = 'inset(0 50% 0 0)';
+            baHandle.style.left = '50%';
+
+            baNavBtns.forEach((b, i) => b.classList.toggle('active', i === index));
+        }
+
+        baNavBtns.forEach(btn => {
+            btn.addEventListener('click', () => switchCase(parseInt(btn.dataset.case)));
+        });
+
+        // ============================
+        // Gallery reveal
+        // ============================
+        gsap.from('.gallery-item', {
+            opacity: 0, y: 50, scale: 0.95,
+            duration: 0.7, stagger: 0.08, ease: 'power3.out',
+            scrollTrigger: { trigger: '.gallery-grid', start: 'top 80%', toggleActions: 'play none none none' }
+        });
+
+        // ============================
+        // CTA reveal
+        // ============================
+        gsap.from('.cta-card', {
+            scale: 0.85, opacity: 0, duration: 1, ease: 'power3.out',
+            scrollTrigger: { trigger: '.cta', start: 'top 75%', toggleActions: 'play none none none' }
+        });
+
+        // ============================
+        // Navbar
+        // ============================
+        const navbar = document.getElementById('navbar');
+        lenis.on('scroll', () => { navbar.classList.toggle('scrolled', lenis.scroll > 50); });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('[data-nav]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    lenis.scrollTo(target, { offset: -80 });
+                    // Close mobile nav
+                    document.getElementById('mobileNav').classList.remove('active');
+                }
+            });
+        });
+
+        // Burger menu
+        const burger = document.getElementById('burger');
+        const mobileNav = document.getElementById('mobileNav');
+        burger.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
+
+        // ============================
+        // Social FAB
+        // ============================
+        const socialFab = document.getElementById('socialFab');
+        const fabTrigger = socialFab.querySelector('.fab-trigger');
+        fabTrigger.addEventListener('click', () => {
+            socialFab.classList.toggle('open');
+        });
+
+        // Close FAB on outside click
+        document.addEventListener('click', (e) => {
+            if (!socialFab.contains(e.target)) {
+                socialFab.classList.remove('open');
+            }
+        });
+
+        // ============================
+        // Booking Modal
+        // ============================
+        const modal = document.getElementById('bookingModal');
+        const formEl = document.getElementById('bookingForm');
+        const successEl = document.getElementById('formSuccess');
+        const consent = document.getElementById('formConsent');
+        const submitBtn = document.getElementById('formSubmit');
+
+        // Open modal
+        document.querySelectorAll('[data-open-modal]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.add('active');
+                lenis.stop();
+                // Close mobile nav if open
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        // Close modal
+        function closeModal() {
+            modal.classList.remove('active');
+            lenis.start();
+        }
+
+        document.getElementById('modalClose').addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); closePrivacy(); } });
+
+        // Consent checkbox
+        consent.addEventListener('change', () => {
+            submitBtn.disabled = !consent.checked;
+        });
+
+        // Submit
+        submitBtn.addEventListener('click', async () => {
+            const name = document.getElementById('formName').value.trim();
+            const phone = document.getElementById('formPhone').value.trim();
+            const car = document.getElementById('formCar').value.trim();
+            const service = document.getElementById('formService').value;
+            const comment = document.getElementById('formComment').value.trim();
+
+            if (!name || !phone) {
+                alert('Пожалуйста, заполните имя и телефон');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+
+            try {
+                const resp = await fetch('/api/booking', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name, phone, car, service, comment,
+                        analytics: analytics.getData()
+                    })
+                });
+
+                if (resp.ok) {
+                    formEl.style.display = 'none';
+                    successEl.classList.add('show');
+                    setTimeout(() => {
+                        closeModal();
+                        // Reset
+                        formEl.style.display = '';
+                        successEl.classList.remove('show');
+                        document.getElementById('formName').value = '';
+                        document.getElementById('formPhone').value = '';
+                        document.getElementById('formCar').value = '';
+                        document.getElementById('formService').value = '';
+                        document.getElementById('formComment').value = '';
+                        consent.checked = false;
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = 'Отправить заявку';
+                    }, 3000);
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch {
+                alert('Произошла ошибка. Попробуйте позвонить нам: +7 951 980 87 77');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Отправить заявку';
+            }
+        });
+
+        // ============================
+        // Privacy Modal
+        // ============================
+        const privacyOverlay = document.getElementById('privacyModal');
+
+        function closePrivacy() {
+            privacyOverlay.classList.remove('active');
+        }
+
+        document.getElementById('privacyLink').addEventListener('click', (e) => {
+            e.preventDefault();
+            privacyOverlay.classList.add('active');
+        });
+
+        document.getElementById('footerPrivacy').addEventListener('click', (e) => {
+            e.preventDefault();
+            privacyOverlay.classList.add('active');
+        });
+
+        document.getElementById('privacyClose').addEventListener('click', closePrivacy);
+        privacyOverlay.addEventListener('click', (e) => { if (e.target === privacyOverlay) closePrivacy(); });
+
+        // Phone input mask (basic)
+        const phoneInput = document.getElementById('formPhone');
+        phoneInput.addEventListener('input', (e) => {
+            let val = e.target.value.replace(/\D/g, '');
+            if (val.length > 0) {
+                if (val[0] === '8') val = '7' + val.slice(1);
+                if (val[0] !== '7') val = '7' + val;
+                let formatted = '+7';
+                if (val.length > 1) formatted += ' (' + val.slice(1, 4);
+                if (val.length > 4) formatted += ') ' + val.slice(4, 7);
+                if (val.length > 7) formatted += '-' + val.slice(7, 9);
+                if (val.length > 9) formatted += '-' + val.slice(9, 11);
+                e.target.value = formatted;
+            }
+        });
+
+    })();
+    </script>
+</body>
+</html>

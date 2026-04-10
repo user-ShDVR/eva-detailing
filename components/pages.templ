@@ -1,0 +1,659 @@
+package components
+
+templ IndexPage(services []Service, cases []Case) {
+	@Layout("Детейлинг-студия в Сургуте", services, "index.js") {
+		<div class="preloader" id="preloader">
+			<div class="preloader-text">
+				<span class="char">E</span><span class="char">.</span><span class="char">V</span><span class="char">.</span><span class="char">A</span><span class="char">.</span>
+			</div>
+		</div>
+		<section class="hero" id="hero">
+			<div class="hero-bg">
+				<img src="/static/imgs/FullSizeRender.JPG" alt="E.V.A.DETAILING studio" loading="eager"/>
+			</div>
+			<div class="hero-content">
+				<div class="hero-label">Детейлинг-студия в Сургуте</div>
+				<h1>
+					<span class="line"><span class="word">Пожалуй, лучшее,</span></span>
+					<span class="line"><span class="word">что может случиться</span></span>
+					<span class="line"><span class="word accent-word">с Вашим автомобилем.</span></span>
+				</h1>
+				<div class="hero-buttons">
+					<button class="btn-primary" data-open-modal>
+						Записаться
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+					</button>
+					<a href="tel:+79519808777" class="btn-outline">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+						Позвонить
+					</a>
+				</div>
+			</div>
+			<div class="hero-scroll">
+				<span>scroll</span>
+				<div class="scroll-line"></div>
+			</div>
+		</section>
+		<div class="marquee-section">
+			<div class="marquee-track" data-direction="-1" data-speed="1">
+				<div class="marquee-content">
+					<span class="marquee-item filled">ДЕТЕЙЛИНГ</span><span class="marquee-dot"></span>
+					<span class="marquee-item">ПОЛИРОВКА</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">КЕРАМИКА</span><span class="marquee-dot"></span>
+					<span class="marquee-item">PPF</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">E.V.A.</span><span class="marquee-dot"></span>
+					<span class="marquee-item">ЗАЩИТА</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">СУРГУТ</span><span class="marquee-dot"></span>
+				</div>
+				<div class="marquee-content" aria-hidden="true">
+					<span class="marquee-item filled">ДЕТЕЙЛИНГ</span><span class="marquee-dot"></span>
+					<span class="marquee-item">ПОЛИРОВКА</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">КЕРАМИКА</span><span class="marquee-dot"></span>
+					<span class="marquee-item">PPF</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">E.V.A.</span><span class="marquee-dot"></span>
+					<span class="marquee-item">ЗАЩИТА</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">СУРГУТ</span><span class="marquee-dot"></span>
+				</div>
+			</div>
+		</div>
+		<section class="about" id="about">
+			<div class="container">
+				<div class="about-card glass">
+					<div class="about-text">
+						<h2>
+							<span class="split-line"><span>Забота о вашем</span></span>
+							<span class="split-line"><span class="highlight">автомобиле</span></span>
+						</h2>
+						<p>E.V.A.DETAILING — это профессиональная детейлинг-студия в{ "\u00a0" }Сургуте. Мы{ "\u00a0" }используем премиальные материалы и{ "\u00a0" }современное оборудование, чтобы ваш автомобиль выглядел безупречно. Каждый проект для нас{ "\u00a0" }— это индивидуальный подход и{ "\u00a0" }внимание к{ "\u00a0" }мельчайшим деталям.</p>
+					</div>
+					<div class="about-stats">
+						<div class="stat">
+							<div class="stat-number">5+</div>
+							<div class="stat-label">Лет опыта</div>
+						</div>
+						<div class="stat">
+							<div class="stat-number">1000+</div>
+							<div class="stat-label">Довольных клиентов</div>
+						</div>
+						<div class="stat">
+							<div class="stat-number">100%</div>
+							<div class="stat-label">Премиум материалы</div>
+						</div>
+						<div class="stat">
+							<div class="stat-number">2</div>
+							<div class="stat-label">Года гарантия на покрытия</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="services" id="services">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title"><span class="word">Наши</span> <span class="word">услуги</span></h2>
+					<p class="section-subtitle">Полный спектр детейлинг-услуг для вашего автомобиля</p>
+				</div>
+				<div class="services-tabs">
+					<button class="tab-btn active" data-tab="all">Все услуги</button>
+					<button class="tab-btn" data-tab="exterior">Экстерьер</button>
+					<button class="tab-btn" data-tab="interior">Интерьер</button>
+					<button class="tab-btn" data-tab="sound">Шумоизоляция</button>
+				</div>
+				<div class="tab-content">
+					<div class="tab-panel active" data-panel="all">
+						<div class="services-grid">
+							for _, s := range services {
+								<a href={ templ.SafeURL("/services/" + s.Slug) } class="service-card glass">
+									<h3>{ s.Title }</h3>
+									<p>{ s.Subtitle }</p>
+									<span class="service-card-link">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></span>
+								</a>
+							}
+						</div>
+					</div>
+					<div class="tab-panel" data-panel="exterior">
+						<div class="service-detail">
+							<div class="service-info">
+								<h3>Экстерьер</h3>
+								<p>Полировка кузова, антигравийные плёнки, антихром и{ "\u00a0" }защитные покрытия — всё для безупречного внешнего вида вашего автомобиля.</p>
+							</div>
+							<div class="service-steps">
+								<div class="service-step">
+									<div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></div>
+									<div class="step-text">
+										<h4><a href="/services/polishing" style="color:var(--text);text-decoration:none;">Полировка ЛКП</a></h4>
+										<p>Восстановительная и защитная полировка кузова</p>
+									</div>
+								</div>
+								<div class="service-step">
+									<div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></div>
+									<div class="step-text">
+										<h4><a href="/services/optics" style="color:var(--text);text-decoration:none;">Полировка оптики</a></h4>
+										<p>Восстановление прозрачности фар и фонарей</p>
+									</div>
+								</div>
+								<div class="service-step">
+									<div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></div>
+									<div class="step-text">
+										<h4><a href="/services/antigravel" style="color:var(--text);text-decoration:none;">Антигравийные плёнки</a></h4>
+										<p>Защита кузова от сколов и царапин (PPF)</p>
+									</div>
+								</div>
+								<div class="service-step">
+									<div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></div>
+									<div class="step-text">
+										<h4><a href="/services/antichrome" style="color:var(--text);text-decoration:none;">Антихром</a></h4>
+										<p>Оклейка хромированных элементов в чёрный</p>
+									</div>
+								</div>
+								<div class="service-step">
+									<div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></div>
+									<div class="step-text">
+										<h4><a href="/services/coatings" style="color:var(--text);text-decoration:none;">Защитные покрытия</a></h4>
+										<p>Керамика, полимер, кварц — долговременная защита</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-panel" data-panel="interior">
+						<div class="service-detail">
+							<div class="service-info">
+								<h3>Интерьер</h3>
+								<p>Химчистка салона, полировка декоративных вставок и{ "\u00a0" }локальная чистка отдельных элементов.</p>
+							</div>
+							<div class="service-steps">
+								<div class="service-step">
+									<div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></div>
+									<div class="step-text">
+										<h4><a href="/services/cleaning" style="color:var(--text);text-decoration:none;">Химчистка салона</a></h4>
+										<p>Глубокая очистка интерьера автомобиля</p>
+									</div>
+								</div>
+								<div class="service-step">
+									<div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></div>
+									<div class="step-text">
+										<h4><a href="/services/interior-polishing" style="color:var(--text);text-decoration:none;">Полировка декоративных вставок</a></h4>
+										<p>Восстановление глянца интерьерных элементов</p>
+									</div>
+								</div>
+								<div class="service-step">
+									<div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg></div>
+									<div class="step-text">
+										<h4><a href="/services/partial-cleaning" style="color:var(--text);text-decoration:none;">Химчистка отдельных элементов</a></h4>
+										<p>Точечная чистка: потолок, сиденье, багажник</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-panel" data-panel="sound">
+						<div class="service-detail">
+							<div class="service-info">
+								<h3>Шумоизоляция</h3>
+								<p>Комплексная шумо и{ "\u00a0" }виброизоляция для максимального комфорта.</p>
+								<a href="/services/soundproofing" class="btn-outline" style="margin-top:24px;padding:12px 28px;font-size:0.9rem;">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M9 18l6-6-6-6"></path></svg></a>
+							</div>
+							<div class="service-steps">
+								<div class="service-step">
+									<div class="step-num">1</div>
+									<div class="step-text"><h4>Диагностика</h4><p>Определение источников шума и вибрации</p></div>
+								</div>
+								<div class="service-step">
+									<div class="step-num">2</div>
+									<div class="step-text"><h4>Разборка</h4><p>Аккуратный демонтаж элементов салона</p></div>
+								</div>
+								<div class="service-step">
+									<div class="step-num">3</div>
+									<div class="step-text"><h4>Монтаж</h4><p>Нанесение вибро и шумоизоляционных материалов</p></div>
+								</div>
+								<div class="service-step">
+									<div class="step-num">4</div>
+									<div class="step-text"><h4>Сборка</h4><p>Сборка салона и контроль качества</p></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="marquee-section">
+			<div class="marquee-track" data-direction="1" data-speed="0.8">
+				<div class="marquee-content">
+					<span class="marquee-item">ХИМЧИСТКА</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">ОКЛЕЙКА</span><span class="marquee-dot"></span>
+					<span class="marquee-item">ТОНИРОВКА</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">АНТИДОЖДЬ</span><span class="marquee-dot"></span>
+					<span class="marquee-item">КЕРАМИКА</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">БЛЕСК</span><span class="marquee-dot"></span>
+					<span class="marquee-item">ЧЕРНЕНИЕ</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">КАЧЕСТВО</span><span class="marquee-dot"></span>
+				</div>
+				<div class="marquee-content" aria-hidden="true">
+					<span class="marquee-item">ХИМЧИСТКА</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">ОКЛЕЙКА</span><span class="marquee-dot"></span>
+					<span class="marquee-item">ТОНИРОВКА</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">АНТИДОЖДЬ</span><span class="marquee-dot"></span>
+					<span class="marquee-item">КЕРАМИКА</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">БЛЕСК</span><span class="marquee-dot"></span>
+					<span class="marquee-item">ЧЕРНЕНИЕ</span><span class="marquee-dot"></span>
+					<span class="marquee-item filled">КАЧЕСТВО</span><span class="marquee-dot"></span>
+				</div>
+			</div>
+		</div>
+		<section class="process" id="process">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title"><span class="word">Как</span> <span class="word">мы</span> <span class="word">работаем</span></h2>
+					<p class="section-subtitle">Прозрачный процесс от записи до выдачи автомобиля</p>
+				</div>
+				<div class="process-grid">
+					<div class="process-card glass"><div class="process-num">01</div><h3>Осмотр</h3><p>Диагностика состояния кузова и салона, замер толщины ЛКП</p></div>
+					<div class="process-card glass"><div class="process-num">02</div><h3>Согласование</h3><p>Обсуждаем объём работ, сроки и стоимость</p></div>
+					<div class="process-card glass"><div class="process-num">03</div><h3>Подготовка</h3><p>Мойка, деконтаминация, маскировка элементов</p></div>
+					<div class="process-card glass"><div class="process-num">04</div><h3>Выполнение</h3><p>Проведение детейлинг-работ опытными мастерами</p></div>
+					<div class="process-card glass"><div class="process-num">05</div><h3>Контроль</h3><p>Проверка качества при специальном освещении</p></div>
+					<div class="process-card glass"><div class="process-num">06</div><h3>Выдача</h3><p>Демонстрация результата и рекомендации по уходу</p></div>
+				</div>
+			</div>
+		</section>
+		<section class="gallery" id="cases" style="padding:140px 0;">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title"><span class="word">Наши</span> <span class="word">кейсы</span></h2>
+					<p class="section-subtitle">Воспользуйтесь нашим опытом</p>
+				</div>
+				<div class="cases-bento">
+					for i, c := range cases {
+						if i == 1 {
+							<a href={ templ.SafeURL("/cases/" + c.Slug) } class="case-card featured">
+								<img src={ "/static/imgs/" + c.HeroImage } alt={ c.Car } loading="lazy"/>
+								<div class="case-card-info">
+									<h4>{ c.Car }</h4>
+									<div class="case-card-arrow">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+									</div>
+								</div>
+							</a>
+						} else {
+							<a href={ templ.SafeURL("/cases/" + c.Slug) } class="case-card">
+								<img src={ "/static/imgs/" + c.HeroImage } alt={ c.Car } loading="lazy"/>
+								<div class="case-card-info">
+									<h4>{ c.Car }</h4>
+									<div class="case-card-arrow">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+									</div>
+								</div>
+							</a>
+						}
+					}
+				</div>
+			</div>
+		</section>
+		<section class="gallery" id="gallery">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title"><span class="word">Портфолио</span></h2>
+					<p class="section-subtitle">Наши работы в детейлинг-студии</p>
+				</div>
+				<div class="gallery-grid">
+					<div class="gallery-item"><img src="/static/imgs/IMG_0240.JPG" alt="Mercedes GLS" loading="lazy"/></div>
+					<div class="gallery-item"><img src="/static/imgs/IMG_0243.JPG" alt="Детейлинг" loading="lazy"/></div>
+					<div class="gallery-item"><img src="/static/imgs/IMG_1845.JPG" alt="Студия" loading="lazy"/></div>
+					<div class="gallery-item"><img src="/static/imgs/IMG_1848.JPG" alt="Работа" loading="lazy"/></div>
+					<div class="gallery-item"><img src="/static/imgs/IMG_0353.JPG" alt="Полировка" loading="lazy"/></div>
+					<div class="gallery-item"><img src="/static/imgs/IMG_9886.JPG" alt="Результат" loading="lazy"/></div>
+					<div class="gallery-item"><img src="/static/imgs/IMG_9887.JPG" alt="Детейлинг" loading="lazy"/></div>
+					<div class="gallery-item"><img src="/static/imgs/IMG_0370.JPG" alt="Оклейка" loading="lazy"/></div>
+					<div class="gallery-item"><img src="/static/imgs/IMG_7242.JPG" alt="Студия E.V.A." loading="lazy"/></div>
+				</div>
+			</div>
+		</section>
+		<section class="cta" id="cta">
+			<div class="container">
+				<div class="cta-card glass">
+					<h2>Готовы преобразить ваш автомобиль?</h2>
+					<p>Оставьте заявку — мы свяжемся с вами и подберём оптимальный комплекс услуг</p>
+					<button class="btn-primary" data-open-modal style="position:relative;">
+						<span>Записаться на детейлинг</span>
+						<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+					</button>
+				</div>
+			</div>
+		</section>
+		<section class="contacts" id="contacts">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title"><span class="word">Контакты</span></h2>
+					<p class="section-subtitle">Приезжайте — покажем студию лично</p>
+				</div>
+				<div class="contacts-grid">
+					<div class="contacts-info">
+						<div class="contact-item">
+							<div class="contact-icon">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+							</div>
+							<div class="contact-text">
+								<h4>Адрес</h4>
+								<p>г. Сургут, ул. Аэрофлотская 30, стр. 2<br/>Детейлинг-центр на АЗК</p>
+							</div>
+						</div>
+						<div class="contact-item">
+							<div class="contact-icon">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+							</div>
+							<div class="contact-text">
+								<h4>Телефон</h4>
+								<a href="tel:+79519808777">+7 951 980 87 77</a>
+							</div>
+						</div>
+						<div class="contact-item">
+							<div class="contact-icon">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+							</div>
+							<div class="contact-text">
+								<h4>Режим работы</h4>
+								<p>Пн-Сб: 09:00 — 18:00<br/>Вс: выходной</p>
+							</div>
+						</div>
+					</div>
+					<div class="contacts-map" id="mapContainer" data-src="https://yandex.ru/map-widget/v1/?um=constructor%3A5c7e4b2e2d3c4a5f6b7c8d9e0f1a2b3c&amp;source=constructor&amp;ll=73.390679%2C61.310330&amp;z=16&amp;pt=73.390679%2C61.310330">
+					</div>
+				</div>
+			</div>
+		</section>
+	}
+}
+
+templ ServicePage(service Service, services []Service) {
+	@Layout(service.Title, services, "service.js") {
+		<section class="page-hero">
+			<div class="hero-bg">
+				<img src={ "/static/imgs/" + service.HeroImage } alt={ service.Title } loading="eager"/>
+			</div>
+			<div class="container">
+				<div class="hero-content" style="visibility:visible;">
+					<div class="breadcrumbs">
+						<a href="/">Главная</a> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5;vertical-align:middle;"><path d="M9 18l6-6-6-6"></path></svg>
+						<a href="/#services">Услуги</a> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5;vertical-align:middle;"><path d="M9 18l6-6-6-6"></path></svg>
+						<span>{ service.Title }</span>
+					</div>
+					<h1 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:800;margin-bottom:16px;letter-spacing:-0.03em;">{ service.Title }</h1>
+					<p style="color:var(--text-secondary);font-size:1.1rem;margin-bottom:32px;max-width:600px;line-height:1.7;">{ service.Subtitle }</p>
+					<button class="btn-primary" data-open-modal data-service={ service.Title }>
+						Записаться
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+					</button>
+				</div>
+			</div>
+		</section>
+		<section class="service-content">
+			<div class="container">
+				<div class="service-detail">
+					<div class="service-info">
+						<h2 style="font-size:1.8rem;font-weight:800;margin-bottom:16px;">Описание</h2>
+						<p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.9;">{ service.Description }</p>
+						<div class="service-tags" style="margin-top:24px;">
+							for _, tag := range service.Tags {
+								<span class="service-tag">{ tag }</span>
+							}
+						</div>
+						if len(service.Prices) > 0 {
+							<div style="margin-top:32px;">
+								<h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px;">Стоимость</h3>
+								<div style="display:flex;flex-direction:column;gap:12px;">
+									for _, p := range service.Prices {
+										<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid var(--glass-border);">
+											<span style="color:var(--text-secondary);font-size:0.95rem;">{ p.Name }</span>
+											<span style="font-weight:700;color:var(--accent);font-size:1rem;">{ p.Price }</span>
+										</div>
+									}
+								</div>
+							</div>
+						}
+					</div>
+					<div class="service-steps">
+						for _, step := range service.Steps {
+							<div class="service-step">
+								<div class="step-num"></div>
+								<div class="step-text">
+									<h4>{ step.Title }</h4>
+									<p>{ step.Description }</p>
+								</div>
+							</div>
+						}
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="gallery">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title"><span class="word">Примеры</span> <span class="word">работ</span></h2>
+				</div>
+				<div class="gallery-grid">
+					for _, img := range service.Gallery {
+						<div class="gallery-item">
+							<img src={ "/static/imgs/" + img } alt={ service.Title } loading="lazy"/>
+						</div>
+					}
+				</div>
+			</div>
+		</section>
+		<section class="cta">
+			<div class="container">
+				<div class="cta-card glass">
+					<h2>Запишитесь к нам!</h2>
+					<p>Оставьте заявку — мы подберём оптимальный вариант для вашего автомобиля</p>
+					<button class="btn-primary" data-open-modal data-service={ service.Title }>
+						<span>Оставить заявку</span>
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+					</button>
+				</div>
+			</div>
+		</section>
+	}
+}
+
+templ CasePage(c Case, cases []Case, services []Service) {
+	@Layout(c.Car + " — " + c.Title, services, "case.js") {
+		<section class="page-hero">
+			<div class="hero-bg">
+				<img src={ "/static/imgs/" + c.HeroImage } alt={ c.Car }/>
+			</div>
+			<div class="container">
+				<div class="hero-content" style="visibility:visible;">
+					<div class="breadcrumbs">
+						<a href="/">Главная</a> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5;vertical-align:middle;"><path d="M9 18l6-6-6-6"></path></svg>
+						<a href="/#cases">Кейсы</a> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5;vertical-align:middle;"><path d="M9 18l6-6-6-6"></path></svg>
+						<span>{ c.Car }</span>
+					</div>
+					<div class="hero-label" style="opacity:1;">Кейс</div>
+					<h1 style="font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:16px;">{ c.Car }</h1>
+					<p style="font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;">{ c.Title }</p>
+					<button class="btn-primary" data-open-modal>Записаться</button>
+				</div>
+			</div>
+		</section>
+		<section class="before-after" style="padding:100px 0;">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title"><span class="word">До</span> <span class="word">и</span> <span class="word">после</span></h2>
+				</div>
+				<div class="ba-slider-container">
+					<div class="ba-slider" id="baSlider">
+						<img src={ "/static/imgs/" + c.BeforeImg } alt="До" class="ba-before"/>
+						<img src={ "/static/imgs/" + c.AfterImg } alt="После" class="ba-after"/>
+						<div class="ba-handle" id="baHandle"></div>
+						<span class="ba-label ba-label-before">До</span>
+						<span class="ba-label ba-label-after">После</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="case-works">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title"><span class="word">Выполненные</span> <span class="word">работы</span></h2>
+				</div>
+				<div class="work-grid">
+					for _, w := range c.Works {
+						<div class="process-card glass">
+							<div class="process-num"></div>
+							<h3>{ w.Title }</h3>
+							<p>{ w.Description }</p>
+						</div>
+					}
+				</div>
+			</div>
+		</section>
+		<section class="gallery">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title"><span class="word">Фотографии</span></h2>
+				</div>
+				<div class="gallery-grid">
+					for _, img := range c.Gallery {
+						<div class="gallery-item">
+							<img src={ "/static/imgs/" + img } alt={ c.Car } loading="lazy"/>
+						</div>
+					}
+				</div>
+			</div>
+		</section>
+		<section style="padding:80px 0;">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title"><span class="word">Другие</span> <span class="word">кейсы</span></h2>
+				</div>
+				<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+					for _, other := range cases {
+						if other.Slug != c.Slug {
+							<a href={ templ.SafeURL("/cases/" + other.Slug) } class="case-card">
+								<img src={ "/static/imgs/" + other.HeroImage } alt={ other.Car } loading="lazy"/>
+								<div class="case-card-info">
+									<div>
+										<h4>{ other.Car }</h4>
+										<p style="font-size:0.8rem;color:var(--text-secondary);margin-top:4px;">{ other.Title }</p>
+									</div>
+									<div class="case-card-arrow">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+									</div>
+								</div>
+							</a>
+						}
+					}
+				</div>
+			</div>
+		</section>
+		<section class="cta">
+			<div class="container">
+				<div class="cta-card glass">
+					<h2>Хотите так же?</h2>
+					<p>Запишитесь на детейлинг — мы позаботимся о вашем автомобиле</p>
+					<button class="btn-primary" data-open-modal>Записаться на детейлинг</button>
+				</div>
+			</div>
+		</section>
+	}
+}
+
+templ AboutPage(services []Service) {
+	@Layout("О нас", services, "about.js") {
+		<section class="page-hero">
+			<div class="hero-bg">
+				<img src="/static/imgs/IMG_1845.JPG" alt="Студия E.V.A.DETAILING"/>
+			</div>
+			<div class="container">
+				<div class="hero-content" style="visibility:visible;">
+					<div class="breadcrumbs">
+						<a href="/">Главная</a> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5;vertical-align:middle;"><path d="M9 18l6-6-6-6"></path></svg>
+						<span>О нас</span>
+					</div>
+					<h1 style="font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:16px;">О студии E.V.A.DETAILING</h1>
+					<p style="font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;">Профессиональный детейлинг в Сургуте с 2xxx года</p>
+				</div>
+			</div>
+		</section>
+		<section class="about-content">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title"><span class="word">О</span> <span class="word">нас</span></h2>
+				</div>
+				<div class="about-block glass">
+					<h3>Наша история</h3>
+					<p>E.V.A.DETAILING — это детейлинг-студия премиум-класса в Сургуте, основанная в 2xxx году. текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст </p>
+					<p>Мы верим, что каждый автомобиль заслуживает индивидуального подхода. Поэтому перед началом работы проводим тщательную диагностику и обсуждаем с клиентом все детали. Наша цель — не просто выполнить услугу, а превзойти ожидания.</p>
+				</div>
+				<div class="about-block glass">
+					<h3>Наш подход</h3>
+					<p>Мы используем только проверенные материалы мировых брендов: Koch Chemie, Rupes, Gyeon, SunTek, Llumar. Каждый мастер в команде проходит регулярное обучение и сертификацию. Мы не гонимся за количеством — каждый автомобиль получает столько времени и внимания, сколько ему нужно.</p>
+					<p>Студия оборудована гексагональным LED-освещением, которое позволяет выявить мельчайшие дефекты покрытия. Контроль качества — на каждом этапе.</p>
+				</div>
+			</div>
+		</section>
+		<section style="padding:80px 0;">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title"><span class="word">Наша</span> <span class="word">команда</span></h2>
+				</div>
+				<div class="team-grid">
+					<div class="team-card glass">
+						<img src="/static/imgs/placeholder.jpg" alt="Команда"/>
+						<h4>Имя</h4>
+						<p>Должность</p>
+					</div>
+					<div class="team-card glass">
+						<img src="/static/imgs/placeholder.jpg" alt="Команда"/>
+						<h4>Имя</h4>
+						<p>Должность</p>
+					</div>
+					<div class="team-card glass">
+						<img src="/static/imgs/placeholder.jpg" alt="Команда"/>
+						<h4>Имя</h4>
+						<p>Должность</p>
+					</div>
+					<div class="team-card glass">
+						<img src="/static/imgs/placeholder.jpg" alt="Команда"/>
+						<h4>Имя</h4>
+						<p>Должность</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section style="padding:80px 0;">
+			<div class="container">
+				<div class="section-header">
+					<h2 class="section-title"><span class="word">В</span> <span class="word">цифрах</span></h2>
+				</div>
+				<div class="about-stats">
+					<div class="stat">
+						<div class="stat-number">5+</div>
+						<div class="stat-label">лет опыта</div>
+					</div>
+					<div class="stat">
+						<div class="stat-number">1000+</div>
+						<div class="stat-label">довольных клиентов</div>
+					</div>
+					<div class="stat">
+						<div class="stat-number">100%</div>
+						<div class="stat-label">премиум материалы</div>
+					</div>
+					<div class="stat">
+						<div class="stat-number">2</div>
+						<div class="stat-label">года гарантии на покрытия</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="cta">
+			<div class="container">
+				<div class="cta-card glass">
+					<h2>Доверьте свой автомобиль профессионалам</h2>
+					<p>Запишитесь на детейлинг — мы позаботимся о каждой детали</p>
+					<button class="btn-primary" data-open-modal>Записаться на детейлинг</button>
+				</div>
+			</div>
+		</section>
+	}
+}
