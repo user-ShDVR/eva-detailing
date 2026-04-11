@@ -23,7 +23,7 @@ templ IndexPage(services []Service, cases []Case) {
 						Записаться
 						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
 					</button>
-					<a href="tel:+79519808777" class="btn-outline">
+					<a href="tel:+79048867777" class="btn-outline">
 						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
 						Позвонить
 					</a>
@@ -80,8 +80,8 @@ templ IndexPage(services []Service, cases []Case) {
 							<div class="stat-label">Премиум материалы</div>
 						</div>
 						<div class="stat">
-							<div class="stat-number">2</div>
-							<div class="stat-label">Года гарантия на покрытия</div>
+							<div class="stat-number">Год</div>
+							<div class="stat-label">гарантии на покрытия</div>
 						</div>
 					</div>
 				</div>
@@ -248,9 +248,10 @@ templ IndexPage(services []Service, cases []Case) {
 					<p class="section-subtitle">Прозрачный процесс от записи до выдачи автомобиля</p>
 				</div>
 				<div class="process-grid">
-					<div class="process-card glass"><div class="process-num">01</div><h3>Осмотр</h3><p>Диагностика состояния кузова и салона, замер толщины ЛКП</p></div>
+					<div class="process-card glass"><div class="process-num">01</div><h3>Осмотр</h3><p>Диагностика состояния кузова и салона, замер толщины ЛКП, проверка на наличие сколов и царапин</p></div>
 					<div class="process-card glass"><div class="process-num">02</div><h3>Согласование</h3><p>Обсуждаем объём работ, сроки и стоимость</p></div>
-					<div class="process-card glass"><div class="process-num">03</div><h3>Подготовка</h3><p>Мойка, деконтаминация, маскировка элементов</p></div>
+					// <div class="process-card glass"><div class="process-num">03</div><h3>Подготовка</h3><p>Мойка, деконтаминация, маскировка элементов</p></div>
+					 <div class="process-card glass"><div class="process-num">03</div><h3>Подготовка</h3><p>Тщательная мойка автомобиля, удаление битума и металлических вкраплений</p></div>
 					<div class="process-card glass"><div class="process-num">04</div><h3>Выполнение</h3><p>Проведение детейлинг-работ опытными мастерами</p></div>
 					<div class="process-card glass"><div class="process-num">05</div><h3>Контроль</h3><p>Проверка качества при специальном освещении</p></div>
 					<div class="process-card glass"><div class="process-num">06</div><h3>Выдача</h3><p>Демонстрация результата и рекомендации по уходу</p></div>
@@ -344,7 +345,7 @@ templ IndexPage(services []Service, cases []Case) {
 							</div>
 							<div class="contact-text">
 								<h4>Телефон</h4>
-								<a href="tel:+79519808777">+7 951 980 87 77</a>
+								<a href="tel: +79048867777">+7 904 886 77 77</a>
 							</div>
 						</div>
 						<div class="contact-item">
@@ -367,17 +368,9 @@ templ IndexPage(services []Service, cases []Case) {
 
 templ ServicePage(service Service, services []Service) {
 	@Layout(service.Title, services, "service.js") {
-		<section class="page-hero">
-			<div class="hero-bg">
-				<img src={ "/static/imgs/" + service.HeroImage } alt={ service.Title } loading="eager"/>
-			</div>
-			<div class="container">
-				<div class="hero-content" style="visibility:visible;">
-					<div class="breadcrumbs">
-						<a href="/">Главная</a> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5;vertical-align:middle;"><path d="M9 18l6-6-6-6"></path></svg>
-						<a href="/#services">Услуги</a> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5;vertical-align:middle;"><path d="M9 18l6-6-6-6"></path></svg>
-						<span>{ service.Title }</span>
-					</div>
+		<section class="page-hero" style="min-height: 45vh;">
+			<div class="container" style="display: flex; flex-direction: column; align-items: end;">
+				<div class="hero-content" style="visibility:visible; display: flex; flex-direction: column; align-items: center;">
 					<h1 style="font-size:clamp(2rem,4vw,3.5rem);font-weight:800;margin-bottom:16px;letter-spacing:-0.03em;">{ service.Title }</h1>
 					<p style="color:var(--text-secondary);font-size:1.1rem;margin-bottom:32px;max-width:600px;line-height:1.7;">{ service.Subtitle }</p>
 					<button class="btn-primary" data-open-modal data-service={ service.Title }>
@@ -571,7 +564,7 @@ templ AboutPage(services []Service) {
 						<span>О нас</span>
 					</div>
 					<h1 style="font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:16px;">О студии E.V.A.DETAILING</h1>
-					<p style="font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;">Профессиональный детейлинг в Сургуте с 2xxx года</p>
+					<p style="font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;">Профессиональный детейлинг в Сургуте с 2020 года</p>
 				</div>
 			</div>
 		</section>
@@ -582,12 +575,12 @@ templ AboutPage(services []Service) {
 				</div>
 				<div class="about-block glass">
 					<h3>Наша история</h3>
-					<p>E.V.A.DETAILING — это детейлинг-студия премиум-класса в Сургуте, основанная в 2xxx году. текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст </p>
+					<p>E.V.A.DETAILING — это детейлинг-студия премиум-класса в Сургуте, основанная в 2020 году.</p>
 					<p>Мы верим, что каждый автомобиль заслуживает индивидуального подхода. Поэтому перед началом работы проводим тщательную диагностику и обсуждаем с клиентом все детали. Наша цель — не просто выполнить услугу, а превзойти ожидания.</p>
 				</div>
 				<div class="about-block glass">
 					<h3>Наш подход</h3>
-					<p>Мы используем только проверенные материалы мировых брендов: Koch Chemie, Rupes, Gyeon, SunTek, Llumar. Каждый мастер в команде проходит регулярное обучение и сертификацию. Мы не гонимся за количеством — каждый автомобиль получает столько времени и внимания, сколько ему нужно.</p>
+					<p>Мы используем только проверенные материалы мировых брендов: Koch Chemie, Quantum, Meguiar's, Krytex,  Sonax, Gliss Pro, Gyeon, Llumar. Каждый мастер в команде проходит регулярное обучение и сертификацию. Мы не гонимся за количеством — каждый автомобиль получает столько времени и внимания, сколько ему нужно.</p>
 					<p>Студия оборудована гексагональным LED-освещением, которое позволяет выявить мельчайшие дефекты покрытия. Контроль качества — на каждом этапе.</p>
 				</div>
 			</div>
@@ -640,8 +633,8 @@ templ AboutPage(services []Service) {
 						<div class="stat-label">премиум материалы</div>
 					</div>
 					<div class="stat">
-						<div class="stat-number">2</div>
-						<div class="stat-label">года гарантии на покрытия</div>
+						<div class="stat-number">Год</div>
+						<div class="stat-label">гарантии на покрытия</div>
 					</div>
 				</div>
 			</div>

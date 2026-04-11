@@ -1501,9 +1501,9 @@ section { position: relative; z-index: 1; }
 
 /* ===== Page Hero (for service/case/about pages) ===== */
 .page-hero {
-    min-height: 100vh;
+    min-height: 45vh;
     display: flex;
-    align-items: flex-end;
+    align-items: end;
     padding: 0 0 80px;
     position: relative;
     overflow: hidden;
@@ -1554,7 +1554,7 @@ section { position: relative; z-index: 1; }
 .breadcrumbs span { color: var(--text-secondary); }
 
 /* ===== Service Page ===== */
-.service-content { padding: 100px 0; }
+.service-content { padding: 32px 0; }
 
 /* ===== Case Page ===== */
 .case-works { padding: 100px 0; }
