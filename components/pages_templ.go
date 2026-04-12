@@ -628,7 +628,7 @@ func CasePage(c Case, cases []Case, services []Service) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 50, "<section class=\"page-hero\"><div class=\"hero-bg\"><img src=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 50, "<section class=\"page-hero\" style=\"min-height: 60vh\"><div class=\"hero-bg\"><img src=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -654,221 +654,208 @@ func CasePage(c Case, cases []Case, services []Service) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 52, "\"></div><div class=\"container\"><div class=\"hero-content\" style=\"visibility:visible;\"><div class=\"breadcrumbs\"><a href=\"/\">Главная</a> <svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"opacity:0.5;vertical-align:middle;\"><path d=\"M9 18l6-6-6-6\"></path></svg> <a href=\"/#cases\">Кейсы</a> <svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"opacity:0.5;vertical-align:middle;\"><path d=\"M9 18l6-6-6-6\"></path></svg> <span>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 52, "\"></div><div class=\"container\"><div class=\"hero-content\" style=\"visibility:visible;\"><div class=\"hero-label\" style=\"opacity:1;\">Кейс</div><h1 style=\"font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:16px;\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var41 string
 			templ_7745c5c3_Var41, templ_7745c5c3_Err = templ.JoinStringErrs(c.Car)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 462, Col: 19}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 460, Col: 116}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var41))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 53, "</span></div><div class=\"hero-label\" style=\"opacity:1;\">Кейс</div><h1 style=\"font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:16px;\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 53, "</h1><p style=\"font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var42 string
-			templ_7745c5c3_Var42, templ_7745c5c3_Err = templ.JoinStringErrs(c.Car)
+			templ_7745c5c3_Var42, templ_7745c5c3_Err = templ.JoinStringErrs(c.Title)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 465, Col: 116}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 461, Col: 91}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var42))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 54, "</h1><p style=\"font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 54, "</p><button class=\"btn-primary\" data-open-modal>Записаться</button></div></div></section><section class=\"before-after\" style=\"padding:100px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">До</span> <span class=\"word\">и</span> <span class=\"word\">после</span></h2></div><div class=\"ba-slider-container\"><div class=\"ba-slider\" id=\"baSlider\"><img src=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var43 string
-			templ_7745c5c3_Var43, templ_7745c5c3_Err = templ.JoinStringErrs(c.Title)
+			templ_7745c5c3_Var43, templ_7745c5c3_Err = templ.JoinStringErrs("/static/imgs/" + c.AfterImg)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 466, Col: 91}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 473, Col: 45}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var43))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 55, "</p><button class=\"btn-primary\" data-open-modal>Записаться</button></div></div></section><section class=\"before-after\" style=\"padding:100px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">До</span> <span class=\"word\">и</span> <span class=\"word\">после</span></h2></div><div class=\"ba-slider-container\"><div class=\"ba-slider\" id=\"baSlider\"><img src=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 55, "\" alt=\"До\" class=\"ba-before\"><img src=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var44 string
 			templ_7745c5c3_Var44, templ_7745c5c3_Err = templ.JoinStringErrs("/static/imgs/" + c.BeforeImg)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 478, Col: 46}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 474, Col: 46}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var44))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 56, "\" alt=\"До\" class=\"ba-before\"> <img src=\"")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			var templ_7745c5c3_Var45 string
-			templ_7745c5c3_Var45, templ_7745c5c3_Err = templ.JoinStringErrs("/static/imgs/" + c.AfterImg)
-			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 479, Col: 45}
-			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var45))
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 57, "\" alt=\"После\" class=\"ba-after\"><div class=\"ba-handle\" id=\"baHandle\"></div><span class=\"ba-label ba-label-before\">До</span> <span class=\"ba-label ba-label-after\">После</span></div></div></div></section><section class=\"case-works\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Выполненные</span> <span class=\"word\">работы</span></h2></div><div class=\"work-grid\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 56, "\" alt=\"После\" class=\"ba-after\"><div class=\"ba-handle\" id=\"baHandle\"></div><span class=\"ba-label ba-label-before\">До</span> <span class=\"ba-label ba-label-after\">После</span></div></div></div></section><section class=\"case-works\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Выполненные</span> <span class=\"word\">работы</span></h2></div><div class=\"work-grid\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			for _, w := range c.Works {
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 58, "<div class=\"process-card glass\"><div class=\"process-num\"></div><h3>")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 57, "<div class=\"process-card glass\"><div class=\"process-num\"></div><h3>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var45 string
+				templ_7745c5c3_Var45, templ_7745c5c3_Err = templ.JoinStringErrs(w.Title)
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 491, Col: 20}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var45))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 58, "</h3><p>")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				var templ_7745c5c3_Var46 string
-				templ_7745c5c3_Var46, templ_7745c5c3_Err = templ.JoinStringErrs(w.Title)
+				templ_7745c5c3_Var46, templ_7745c5c3_Err = templ.JoinStringErrs(w.Description)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 496, Col: 20}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 492, Col: 25}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var46))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 59, "</h3><p>")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 59, "</p></div>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 60, "</div></div></section><section class=\"gallery\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Фотографии</span></h2></div><div class=\"gallery-grid\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			for _, img := range c.Gallery {
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 61, "<div class=\"gallery-item\"><img src=\"")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				var templ_7745c5c3_Var47 string
-				templ_7745c5c3_Var47, templ_7745c5c3_Err = templ.JoinStringErrs(w.Description)
+				templ_7745c5c3_Var47, templ_7745c5c3_Err = templ.JoinStringErrs("/static/imgs/" + img)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 497, Col: 25}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 506, Col: 39}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var47))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 60, "</p></div>")
-				if templ_7745c5c3_Err != nil {
-					return templ_7745c5c3_Err
-				}
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 61, "</div></div></section><section class=\"gallery\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Фотографии</span></h2></div><div class=\"gallery-grid\">")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			for _, img := range c.Gallery {
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 62, "<div class=\"gallery-item\"><img src=\"")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 62, "\" alt=\"")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				var templ_7745c5c3_Var48 string
-				templ_7745c5c3_Var48, templ_7745c5c3_Err = templ.JoinStringErrs("/static/imgs/" + img)
+				templ_7745c5c3_Var48, templ_7745c5c3_Err = templ.JoinStringErrs(c.Car)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 511, Col: 39}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 506, Col: 53}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var48))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 63, "\" alt=\"")
-				if templ_7745c5c3_Err != nil {
-					return templ_7745c5c3_Err
-				}
-				var templ_7745c5c3_Var49 string
-				templ_7745c5c3_Var49, templ_7745c5c3_Err = templ.JoinStringErrs(c.Car)
-				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 511, Col: 53}
-				}
-				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var49))
-				if templ_7745c5c3_Err != nil {
-					return templ_7745c5c3_Err
-				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 64, "\" loading=\"lazy\"></div>")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 63, "\" loading=\"lazy\"></div>")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 65, "</div></div></section><section style=\"padding:80px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Другие</span> <span class=\"word\">кейсы</span></h2></div><div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 64, "</div></div></section><section style=\"padding:80px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Другие</span> <span class=\"word\">кейсы</span></h2></div><div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			for _, other := range cases {
 				if other.Slug != c.Slug {
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 66, "<a href=\"")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 65, "<a href=\"")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					var templ_7745c5c3_Var50 templ.SafeURL
-					templ_7745c5c3_Var50, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL("/cases/" + other.Slug))
+					var templ_7745c5c3_Var49 templ.SafeURL
+					templ_7745c5c3_Var49, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL("/cases/" + other.Slug))
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 525, Col: 54}
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 520, Col: 54}
+					}
+					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var49))
+					if templ_7745c5c3_Err != nil {
+						return templ_7745c5c3_Err
+					}
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 66, "\" class=\"case-card\"><img src=\"")
+					if templ_7745c5c3_Err != nil {
+						return templ_7745c5c3_Err
+					}
+					var templ_7745c5c3_Var50 string
+					templ_7745c5c3_Var50, templ_7745c5c3_Err = templ.JoinStringErrs("/static/imgs/" + other.HeroImage)
+					if templ_7745c5c3_Err != nil {
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 521, Col: 52}
 					}
 					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var50))
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 67, "\" class=\"case-card\"><img src=\"")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 67, "\" alt=\"")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
 					var templ_7745c5c3_Var51 string
-					templ_7745c5c3_Var51, templ_7745c5c3_Err = templ.JoinStringErrs("/static/imgs/" + other.HeroImage)
+					templ_7745c5c3_Var51, templ_7745c5c3_Err = templ.JoinStringErrs(other.Car)
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 526, Col: 52}
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 521, Col: 70}
 					}
 					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var51))
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 68, "\" alt=\"")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 68, "\" loading=\"lazy\"><div class=\"case-card-info\"><div><h4>")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
 					var templ_7745c5c3_Var52 string
 					templ_7745c5c3_Var52, templ_7745c5c3_Err = templ.JoinStringErrs(other.Car)
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 526, Col: 70}
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 524, Col: 25}
 					}
 					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var52))
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 69, "\" loading=\"lazy\"><div class=\"case-card-info\"><div><h4>")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 69, "</h4><p style=\"font-size:0.8rem;color:var(--text-secondary);margin-top:4px;\">")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
 					var templ_7745c5c3_Var53 string
-					templ_7745c5c3_Var53, templ_7745c5c3_Err = templ.JoinStringErrs(other.Car)
+					templ_7745c5c3_Var53, templ_7745c5c3_Err = templ.JoinStringErrs(other.Title)
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 529, Col: 25}
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 525, Col: 95}
 					}
 					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var53))
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 70, "</h4><p style=\"font-size:0.8rem;color:var(--text-secondary);margin-top:4px;\">")
-					if templ_7745c5c3_Err != nil {
-						return templ_7745c5c3_Err
-					}
-					var templ_7745c5c3_Var54 string
-					templ_7745c5c3_Var54, templ_7745c5c3_Err = templ.JoinStringErrs(other.Title)
-					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 530, Col: 95}
-					}
-					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var54))
-					if templ_7745c5c3_Err != nil {
-						return templ_7745c5c3_Err
-					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 71, "</p></div><div class=\"case-card-arrow\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></div></div></a>")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 70, "</p></div><div class=\"case-card-arrow\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></div></div></a>")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
 				}
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 72, "</div></div></section><section class=\"cta\"><div class=\"container\"><div class=\"cta-card glass\"><h2>Хотите так же?</h2><p>Запишитесь на детейлинг — мы позаботимся о вашем автомобиле</p><button class=\"btn-primary\" data-open-modal>Записаться на детейлинг</button></div></div></section>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 71, "</div></div></section><section class=\"cta\"><div class=\"container\"><div class=\"cta-card glass\"><h2>Хотите так же?</h2><p>Запишитесь на детейлинг — мы позаботимся о вашем автомобиле</p><button class=\"btn-primary\" data-open-modal>Записаться на детейлинг</button></div></div></section>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -898,12 +885,12 @@ func AboutPage(services []Service) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var55 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var55 == nil {
-			templ_7745c5c3_Var55 = templ.NopComponent
+		templ_7745c5c3_Var54 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var54 == nil {
+			templ_7745c5c3_Var54 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Var56 := templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
+		templ_7745c5c3_Var55 := templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 			templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 			templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
 			if !templ_7745c5c3_IsBuffer {
@@ -915,13 +902,13 @@ func AboutPage(services []Service) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 73, "<section class=\"page-hero\"><div class=\"hero-bg\"><img src=\"/static/imgs/IMG_1845.webp\" alt=\"Студия E.V.A.DETAILING\"></div><div class=\"container\"><div class=\"hero-content\" style=\"visibility:visible;\"><div class=\"breadcrumbs\"><a href=\"/\">Главная</a> <svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"opacity:0.5;vertical-align:middle;\"><path d=\"M9 18l6-6-6-6\"></path></svg> <span>О нас</span></div><h1 style=\"font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:16px;\">О студии E.V.A.DETAILING</h1><p style=\"font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;\">Профессиональный детейлинг в Сургуте с 2020 года</p></div></div></section><section class=\"about-content\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">О</span> <span class=\"word\">нас</span></h2></div><div class=\"about-block glass\"><h3>Наша история</h3><p>E.V.A.DETAILING — это детейлинг-студия премиум-класса в Сургуте, основанная в 2020 году.</p><p>Мы верим, что каждый автомобиль заслуживает индивидуального подхода. Поэтому перед началом работы проводим тщательную диагностику и обсуждаем с клиентом все детали. Наша цель — не просто выполнить услугу, а превзойти ожидания.</p></div><div class=\"about-block glass\"><h3>Наш подход</h3><p>Мы используем только проверенные материалы мировых брендов: Koch Chemie, Quantum, Meguiar's, Krytex,  Sonax, Gliss Pro, Gyeon, Llumar. Каждый мастер в команде проходит регулярное обучение и сертификацию. Мы не гонимся за количеством — каждый автомобиль получает столько времени и внимания, сколько ему нужно.</p><p>Студия оборудована гексагональным LED-освещением, которое позволяет выявить мельчайшие дефекты покрытия. Контроль качества — на каждом этапе.</p></div></div></section><section style=\"padding:80px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Наша</span> <span class=\"word\">команда</span></h2></div><div class=\"team-grid\"><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div></div></div></section><section style=\"padding:80px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">В</span> <span class=\"word\">цифрах</span></h2></div><div class=\"about-stats\"><div class=\"stat\"><div class=\"stat-number\">5+</div><div class=\"stat-label\">лет опыта</div></div><div class=\"stat\"><div class=\"stat-number\">1000+</div><div class=\"stat-label\">довольных клиентов</div></div><div class=\"stat\"><div class=\"stat-number\">100%</div><div class=\"stat-label\">премиум материалы</div></div><div class=\"stat\"><div class=\"stat-number\">Год</div><div class=\"stat-label\">гарантии на покрытия</div></div></div></div></section><section class=\"cta\"><div class=\"container\"><div class=\"cta-card glass\"><h2>Доверьте свой автомобиль профессионалам</h2><p>Запишитесь на детейлинг — мы позаботимся о каждой детали</p><button class=\"btn-primary\" data-open-modal>Записаться на детейлинг</button></div></div></section>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 72, "<section class=\"page-hero\"><div class=\"hero-bg\"><img src=\"/static/imgs/IMG_1845.webp\" alt=\"Студия E.V.A.DETAILING\"></div><div class=\"container\"><div class=\"hero-content\" style=\"visibility:visible; display: flex; flex-direction: column; align-items: center; text-align: center;\"><h1 style=\"font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;\">О студии E.V.A.DETAILING</h1><p style=\"font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;\">Профессиональный детейлинг в Сургуте с 2020 года</p></div></div></section><section class=\"about-content\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">О</span> <span class=\"word\">нас</span></h2></div><div class=\"about-block glass\"><h3>Наша история</h3><p>E.V.A.DETAILING — это детейлинг-студия премиум-класса в Сургуте, основанная в 2020 году.</p><p>Мы верим, что каждый автомобиль заслуживает индивидуального подхода. Поэтому перед началом работы проводим тщательную диагностику и обсуждаем с клиентом все детали. Наша цель — не просто выполнить услугу, а превзойти ожидания.</p></div><div class=\"about-block glass\"><h3>Наш подход</h3><p>Мы используем только проверенные материалы мировых брендов: Koch Chemie, Quantum, Meguiar's, Krytex,  Sonax, Gliss Pro, Gyeon, Llumar. Каждый мастер в команде проходит регулярное обучение и сертификацию. Мы не гонимся за количеством — каждый автомобиль получает столько времени и внимания, сколько ему нужно.</p><p>Студия оборудована гексагональным LED-освещением, которое позволяет выявить мельчайшие дефекты покрытия. Контроль качества — на каждом этапе.</p></div></div></section><section style=\"padding:80px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Наша</span> <span class=\"word\">команда</span></h2></div><div class=\"team-grid\"><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div></div></div></section><section style=\"padding:80px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">В</span> <span class=\"word\">цифрах</span></h2></div><div class=\"about-stats\"><div class=\"stat\"><div class=\"stat-number\">5+</div><div class=\"stat-label\">лет опыта</div></div><div class=\"stat\"><div class=\"stat-number\">1000+</div><div class=\"stat-label\">довольных клиентов</div></div><div class=\"stat\"><div class=\"stat-number\">100%</div><div class=\"stat-label\">премиум материалы</div></div><div class=\"stat\"><div class=\"stat-number\">Год</div><div class=\"stat-label\">гарантии на покрытия</div></div></div></div></section><section class=\"cta\"><div class=\"container\"><div class=\"cta-card glass\"><h2>Доверьте свой автомобиль профессионалам</h2><p>Запишитесь на детейлинг — мы позаботимся о каждой детали</p><button class=\"btn-primary\" data-open-modal>Записаться на детейлинг</button></div></div></section>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			return nil
 		})
-		templ_7745c5c3_Err = Layout("О нас", services, "about.js").Render(templ.WithChildren(ctx, templ_7745c5c3_Var56), templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = Layout("О нас", services, "about.js").Render(templ.WithChildren(ctx, templ_7745c5c3_Var55), templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

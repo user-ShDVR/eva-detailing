@@ -450,17 +450,12 @@ templ ServicePage(service Service, services []Service) {
 
 templ CasePage(c Case, cases []Case, services []Service) {
 	@Layout(c.Car + " — " + c.Title, services, "case.js") {
-		<section class="page-hero">
+		<section class="page-hero" style="min-height: 60vh">
 			<div class="hero-bg">
 				<img src={ "/static/imgs/" + c.HeroImage } alt={ c.Car }/>
 			</div>
 			<div class="container">
 				<div class="hero-content" style="visibility:visible;">
-					<div class="breadcrumbs">
-						<a href="/">Главная</a> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5;vertical-align:middle;"><path d="M9 18l6-6-6-6"></path></svg>
-						<a href="/#cases">Кейсы</a> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5;vertical-align:middle;"><path d="M9 18l6-6-6-6"></path></svg>
-						<span>{ c.Car }</span>
-					</div>
 					<div class="hero-label" style="opacity:1;">Кейс</div>
 					<h1 style="font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:16px;">{ c.Car }</h1>
 					<p style="font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;">{ c.Title }</p>
@@ -475,8 +470,8 @@ templ CasePage(c Case, cases []Case, services []Service) {
 				</div>
 				<div class="ba-slider-container">
 					<div class="ba-slider" id="baSlider">
-						<img src={ "/static/imgs/" + c.BeforeImg } alt="До" class="ba-before"/>
-						<img src={ "/static/imgs/" + c.AfterImg } alt="После" class="ba-after"/>
+						<img src={ "/static/imgs/" + c.AfterImg } alt="До" class="ba-before"/> // не понял почему, но нужно именно так
+						<img src={ "/static/imgs/" + c.BeforeImg } alt="После" class="ba-after"/>
 						<div class="ba-handle" id="baHandle"></div>
 						<span class="ba-label ba-label-before">До</span>
 						<span class="ba-label ba-label-after">После</span>
@@ -558,12 +553,8 @@ templ AboutPage(services []Service) {
 				<img src="/static/imgs/IMG_1845.webp" alt="Студия E.V.A.DETAILING"/>
 			</div>
 			<div class="container">
-				<div class="hero-content" style="visibility:visible;">
-					<div class="breadcrumbs">
-						<a href="/">Главная</a> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5;vertical-align:middle;"><path d="M9 18l6-6-6-6"></path></svg>
-						<span>О нас</span>
-					</div>
-					<h1 style="font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:16px;">О студии E.V.A.DETAILING</h1>
+				<div class="hero-content" style="visibility:visible; display: flex; flex-direction: column; align-items: center; text-align: center;">
+					<h1 style="font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;">О студии E.V.A.DETAILING</h1>
 					<p style="font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;">Профессиональный детейлинг в Сургуте с 2020 года</p>
 				</div>
 			</div>
