@@ -36,7 +36,7 @@ var servicesList = []components.Service{
 			{Name: "Фары (пара)", Price: "от 5 000 ₽"},
 			{Name: "Полная оклейка", Price: "от 150 000 ₽"},
 		},
-		Gallery: []string{"IMG_0240.webp", "IMG_0243.webp", "IMG_9886.webp", "IMG_9887.webp", "опп.webp", "опп1.webp", "опп2.webp", "опп3.webp"},
+		Gallery: []string{"опп.webp", "опп2.webp", "опп3.webp", "цп.webp", "цп3.webp", "цп4.webp", "цп5.webp", "цп6.webp", "цп7.webp", "цп8.webp", "цп9.webp", "оп.webp", "оп2.webp", "оп3.webp", "оп4.webp", "оп5.webp", "оп6.webp", "оп7.webp", "оп8.webp", },
 	},
 	{
 		Slug:        "antichrome",
