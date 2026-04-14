@@ -198,22 +198,6 @@ var servicesList = []components.Service{
 
 var casesList = []components.Case{
 	{
-		Slug:      "dodge-ram",
-		Car:       "Dodge RAM",
-		Title:     "Что было сделанно с машиной",
-		HeroImage: "IMG_0243.webp",
-		BeforeImg: "FullSizeRender 21.webp",
-		AfterImg:  "FullSizeRender 11.webp",
-		Works: []components.Step{
-			{Title: "Замер толщины ЛКП", Description: "Диагностика толщиномером всех панелей кузова"},
-			{Title: "Подготовка", Description: "Тщательная мойка и маскировка пластика и резинок"},
-			{Title: "Абразивная полировка", Description: "Удаление глубоких царапин и голограмм роторной машинкой"},
-			{Title: "Финишная полировка", Description: "Придание идеального глянца DA-машинкой"},
-			{Title: "Керамическое покрытие", Description: "Нанесение 2 слоёв керамики с ИК-сушкой"},
-		},
-		Gallery: []string{"IMG_0243.webp"},
-	},
-	{
 		Slug:      "BMW",
 		Car:       "BMW",
 		Title:     "Что было сделанно с машиной",
@@ -228,6 +212,22 @@ var casesList = []components.Case{
 			{Title: "Керамическое покрытие", Description: "Нанесение 2 слоёв керамики с ИК-сушкой"},
 		},
 		Gallery: []string{"оп5.webp"},
+	},
+	{
+		Slug:      "dodge-ram",
+		Car:       "Dodge RAM",
+		Title:     "Что было сделанно с машиной",
+		HeroImage: "IMG_0243.webp",
+		BeforeImg: "FullSizeRender 21.webp",
+		AfterImg:  "FullSizeRender 11.webp",
+		Works: []components.Step{
+			{Title: "Замер толщины ЛКП", Description: "Диагностика толщиномером всех панелей кузова"},
+			{Title: "Подготовка", Description: "Тщательная мойка и маскировка пластика и резинок"},
+			{Title: "Абразивная полировка", Description: "Удаление глубоких царапин и голограмм роторной машинкой"},
+			{Title: "Финишная полировка", Description: "Придание идеального глянца DA-машинкой"},
+			{Title: "Керамическое покрытие", Description: "Нанесение 2 слоёв керамики с ИК-сушкой"},
+		},
+		Gallery: []string{"IMG_0243.webp"},
 	},
 	{
 		Slug:      "LEXUS",
