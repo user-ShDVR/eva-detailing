@@ -41,14 +41,14 @@ func IndexPage(services []Service, cases []Case) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"preloader\" id=\"preloader\"><div class=\"preloader-text\"><span class=\"char\">E</span><span class=\"char\">.</span><span class=\"char\">V</span><span class=\"char\">.</span><span class=\"char\">A</span><span class=\"char\">.</span></div></div><section class=\"hero\" id=\"hero\"><div class=\"hero-bg\"><img src=\"/static/imgs/FullSizeRender.webp\" alt=\"E.V.A.DETAILING studio\" loading=\"eager\"></div><div class=\"hero-content\"><div class=\"hero-label\">Детейлинг-студия в Сургуте</div><h1><span class=\"line\"><span class=\"word\">Пожалуй, лучшее,</span></span> <span class=\"line\"><span class=\"word\">что может случиться</span></span> <span class=\"line\"><span class=\"word accent-word\">с Вашим автомобилем.</span></span></h1><div class=\"hero-buttons\"><button class=\"btn-primary\" data-open-modal>Записаться <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></button> <a href=\"tel:+79048867777\" class=\"btn-outline\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z\"></path></svg> Позвонить</a></div></div><div class=\"hero-scroll\"><span>scroll</span><div class=\"scroll-line\"></div></div></section><div class=\"marquee-section\"><div class=\"marquee-track\" data-direction=\"-1\" data-speed=\"1\"><div class=\"marquee-content\"><span class=\"marquee-item filled\">ДЕТЕЙЛИНГ</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ПОЛИРОВКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">КЕРАМИКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">PPF</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">E.V.A.</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ЗАЩИТА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">СУРГУТ</span><span class=\"marquee-dot\"></span></div><div class=\"marquee-content\" aria-hidden=\"true\"><span class=\"marquee-item filled\">ДЕТЕЙЛИНГ</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ПОЛИРОВКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">КЕРАМИКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">PPF</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">E.V.A.</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ЗАЩИТА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">СУРГУТ</span><span class=\"marquee-dot\"></span></div></div></div><section class=\"about\" id=\"about\"><div class=\"container\"><div class=\"about-card glass\"><div class=\"about-text\"><h2><span class=\"split-line\"><span>Забота о вашем</span></span> <span class=\"split-line\"><span class=\"highlight\">автомобиле</span></span></h2><p>E.V.A.DETAILING — это профессиональная детейлинг-студия в")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"preloader\" id=\"preloader\"><div class=\"preloader-text\"><span class=\"char\">E</span><span class=\"char\">.</span><span class=\"char\">V</span><span class=\"char\">.</span><span class=\"char\">A</span><span class=\"char\">.</span></div></div><section class=\"hero\" id=\"hero\"><div class=\"hero-bg\"><img src=\"/static/imgs/FullSizeRender.webp\" alt=\"EvaStyle detailing studio\" loading=\"eager\"></div><div class=\"hero-content\"><div class=\"hero-label\">Детейлинг-студия в Сургуте</div><h1><span class=\"line\"><span class=\"word\">Пожалуй, лучшее,</span></span> <span class=\"line\"><span class=\"word\">что может случиться</span></span> <span class=\"line\"><span class=\"word accent-word\">с Вашим автомобилем.</span></span></h1><div class=\"hero-buttons\"><button class=\"btn-primary\" data-open-modal>Записаться <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></button> <a href=\"tel:+79048867777\" class=\"btn-outline\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z\"></path></svg> Позвонить</a></div></div><div class=\"hero-scroll\"><span>scroll</span><div class=\"scroll-line\"></div></div></section><div class=\"marquee-section\"><div class=\"marquee-track\" data-direction=\"-1\" data-speed=\"1\"><div class=\"marquee-content\"><span class=\"marquee-item filled\">ДЕТЕЙЛИНГ</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ПОЛИРОВКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">КЕРАМИКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">PPF</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">EVASTYLE</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ЗАЩИТА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">СУРГУТ</span><span class=\"marquee-dot\"></span></div><div class=\"marquee-content\" aria-hidden=\"true\"><span class=\"marquee-item filled\">ДЕТЕЙЛИНГ</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ПОЛИРОВКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">КЕРАМИКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">PPF</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">EVASTYLE</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ЗАЩИТА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">СУРГУТ</span><span class=\"marquee-dot\"></span></div></div></div><section class=\"about\" id=\"about\"><div class=\"container\"><div class=\"about-card glass\"><div class=\"about-text\"><h2><span class=\"split-line\"><span>Забота о вашем</span></span> <span class=\"split-line\"><span class=\"highlight\">автомобиле</span></span></h2><p>EvaStyle detailing — это профессиональная детейлинг-студия в")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var3 string
 			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs("\u00a0")
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 67, Col: 113}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 67, Col: 116}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
@@ -61,7 +61,7 @@ func IndexPage(services []Service, cases []Case) templ.Component {
 			var templ_7745c5c3_Var4 string
 			templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs("\u00a0")
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 67, Col: 145}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 67, Col: 148}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 			if templ_7745c5c3_Err != nil {
@@ -74,7 +74,7 @@ func IndexPage(services []Service, cases []Case) templ.Component {
 			var templ_7745c5c3_Var5 string
 			templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs("\u00a0")
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 67, Col: 222}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 67, Col: 225}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 			if templ_7745c5c3_Err != nil {
@@ -87,7 +87,7 @@ func IndexPage(services []Service, cases []Case) templ.Component {
 			var templ_7745c5c3_Var6 string
 			templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs("\u00a0")
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 67, Col: 400}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 67, Col: 403}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
 			if templ_7745c5c3_Err != nil {
@@ -100,7 +100,7 @@ func IndexPage(services []Service, cases []Case) templ.Component {
 			var templ_7745c5c3_Var7 string
 			templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs("\u00a0")
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 67, Col: 467}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 67, Col: 470}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 			if templ_7745c5c3_Err != nil {
@@ -113,7 +113,7 @@ func IndexPage(services []Service, cases []Case) templ.Component {
 			var templ_7745c5c3_Var8 string
 			templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs("\u00a0")
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 67, Col: 498}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 67, Col: 501}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
 			if templ_7745c5c3_Err != nil {
@@ -181,7 +181,7 @@ func IndexPage(services []Service, cases []Case) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 13, "защитные покрытия — всё для безупречного внешнего вида вашего автомобиля.</p></div><div class=\"service-steps\"><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/polishing\" style=\"color:var(--text);text-decoration:none;\">Полировка ЛКП</a></h4><p>Восстановительная и защитная полировка кузова</p></div></div><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/optics\" style=\"color:var(--text);text-decoration:none;\">Полировка оптики</a></h4><p>Восстановление прозрачности фар и фонарей</p></div></div><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/antigravel\" style=\"color:var(--text);text-decoration:none;\">Антигравийные плёнки</a></h4><p>Защита кузова от сколов и царапин (PPF)</p></div></div><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/antichrome\" style=\"color:var(--text);text-decoration:none;\">Антихром</a></h4><p>Оклейка хромированных элементов в чёрный</p></div></div><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/coatings\" style=\"color:var(--text);text-decoration:none;\">Защитные покрытия</a></h4><p>Керамика, полимер, кварц — долговременная защита</p></div></div></div></div></div><div class=\"tab-panel\" data-panel=\"interior\"><div class=\"service-detail\"><div class=\"service-info\"><h3>Интерьер</h3><p>Химчистка салона, полировка декоративных вставок и")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 13, "защитные покрытия — всё для безупречного внешнего вида вашего автомобиля.</p></div><div class=\"service-steps\"><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/polishing\" style=\"color:var(--text);text-decoration:none;\">Полировка ЛКП</a></h4><p>Восстановительная и защитная полировка кузова</p></div></div><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/optics\" style=\"color:var(--text);text-decoration:none;\">Полировка оптики</a></h4><p>Восстановление прозрачности фар и фонарей</p></div></div><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/antigravel\" style=\"color:var(--text);text-decoration:none;\">Антигравийные плёнки</a></h4><p>Защита кузова от сколов и царапин (PPF)</p></div></div><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/antichrome\" style=\"color:var(--text);text-decoration:none;\">Антихром</a></h4><p>Оклейка хромированных элементов в чёрный</p></div></div><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/coatings\" style=\"color:var(--text);text-decoration:none;\">Защитные покрытия</a></h4><p>Керамика — долговременная защита</p></div></div></div></div></div><div class=\"tab-panel\" data-panel=\"interior\"><div class=\"service-detail\"><div class=\"service-info\"><h3>Интерьер</h3><p>Химчистка салона, полировка декоративных вставок и")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -194,7 +194,7 @@ func IndexPage(services []Service, cases []Case) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 14, "локальная чистка отдельных элементов.</p></div><div class=\"service-steps\"><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/cleaning\" style=\"color:var(--text);text-decoration:none;\">Химчистка салона</a></h4><p>Глубокая очистка интерьера автомобиля</p></div></div><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/interior-polishing\" style=\"color:var(--text);text-decoration:none;\">Полировка декоративных вставок</a></h4><p>Восстановление глянца интерьерных элементов</p></div></div><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/partial-cleaning\" style=\"color:var(--text);text-decoration:none;\">Химчистка отдельных элементов</a></h4><p>Точечная чистка: потолок, сиденье, багажник</p></div></div></div></div></div><div class=\"tab-panel\" data-panel=\"sound\"><div class=\"service-detail\"><div class=\"service-info\"><h3>Шумоизоляция</h3><p>Комплексная шумо и")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 14, "локальная чистка отдельных элементов.</p></div><div class=\"service-steps\"><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/cleaning\" style=\"color:var(--text);text-decoration:none;\">Химчистка салона</a></h4><p>Глубокая очистка интерьера автомобиля</p></div></div><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/interior-polishing\" style=\"color:var(--text);text-decoration:none;\">Полировка декоративных вставок</a></h4><p>Восстановление глянца интерьерных элементов</p></div></div><div class=\"service-step\"><div class=\"step-num\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18l6-6-6-6\"></path></svg></div><div class=\"step-text\"><h4><a href=\"/services/partial-cleaning\" style=\"color:var(--text);text-decoration:none;\">Детейлинг мойка подкапотного пространства</a></h4><p>Безопасная и эффективная очистка двигателя и его элементов</p></div></div></div></div></div><div class=\"tab-panel\" data-panel=\"sound\"><div class=\"service-detail\"><div class=\"service-info\"><h3>Шумоизоляция</h3><p>Комплексная шумо и")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -207,7 +207,7 @@ func IndexPage(services []Service, cases []Case) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 15, "виброизоляция для максимального комфорта.</p><a href=\"/services/soundproofing\" class=\"btn-outline\" style=\"margin-top:24px;padding:12px 28px;font-size:0.9rem;\">Подробнее <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle;\"><path d=\"M9 18l6-6-6-6\"></path></svg></a></div><div class=\"service-steps\"><div class=\"service-step\"><div class=\"step-num\">1</div><div class=\"step-text\"><h4>Диагностика</h4><p>Определение источников шума и вибрации</p></div></div><div class=\"service-step\"><div class=\"step-num\">2</div><div class=\"step-text\"><h4>Разборка</h4><p>Аккуратный демонтаж элементов салона</p></div></div><div class=\"service-step\"><div class=\"step-num\">3</div><div class=\"step-text\"><h4>Монтаж</h4><p>Нанесение вибро и шумоизоляционных материалов</p></div></div><div class=\"service-step\"><div class=\"step-num\">4</div><div class=\"step-text\"><h4>Сборка</h4><p>Сборка салона и контроль качества</p></div></div></div></div></div></div></div></section><div class=\"marquee-section\"><div class=\"marquee-track\" data-direction=\"1\" data-speed=\"0.8\"><div class=\"marquee-content\"><span class=\"marquee-item\">ХИМЧИСТКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">ОКЛЕЙКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ТОНИРОВКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">АНТИДОЖДЬ</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">КЕРАМИКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">БЛЕСК</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ЧЕРНЕНИЕ</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">КАЧЕСТВО</span><span class=\"marquee-dot\"></span></div><div class=\"marquee-content\" aria-hidden=\"true\"><span class=\"marquee-item\">ХИМЧИСТКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">ОКЛЕЙКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ТОНИРОВКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">АНТИДОЖДЬ</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">КЕРАМИКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">БЛЕСК</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ЧЕРНЕНИЕ</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">КАЧЕСТВО</span><span class=\"marquee-dot\"></span></div></div></div><section class=\"process\" id=\"process\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Как</span> <span class=\"word\">мы</span> <span class=\"word\">работаем</span></h2><p class=\"section-subtitle\">Прозрачный процесс от записи до выдачи автомобиля</p></div><div class=\"process-grid\"><div class=\"process-card glass\"><div class=\"process-num\">01</div><h3>Осмотр</h3><p>Диагностика состояния кузова и салона, замер толщины ЛКП, проверка на наличие сколов и царапин</p></div><div class=\"process-card glass\"><div class=\"process-num\">02</div><h3>Согласование</h3><p>Обсуждаем объём работ, сроки и стоимость</p></div><div class=\"process-card glass\"><div class=\"process-num\">03</div><h3>Подготовка</h3><p>Тщательная мойка автомобиля, удаление битума и металлических вкраплений</p></div><div class=\"process-card glass\"><div class=\"process-num\">04</div><h3>Выполнение</h3><p>Проведение детейлинг-работ опытными мастерами</p></div><div class=\"process-card glass\"><div class=\"process-num\">05</div><h3>Контроль</h3><p>Проверка качества при специальном освещении</p></div><div class=\"process-card glass\"><div class=\"process-num\">06</div><h3>Выдача</h3><p>Демонстрация результата и рекомендации по уходу</p></div></div></div></section><section class=\"gallery\" id=\"cases\" style=\"padding:140px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Наши</span> <span class=\"word\">кейсы</span></h2><p class=\"section-subtitle\">Воспользуйтесь нашим опытом</p></div><div class=\"cases-bento\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 15, "виброизоляция для максимального комфорта.</p><a href=\"/services/soundproofing\" class=\"btn-outline\" style=\"margin-top:24px;padding:12px 28px;font-size:0.9rem;\">Подробнее <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle;\"><path d=\"M9 18l6-6-6-6\"></path></svg></a></div><div class=\"service-steps\"><div class=\"service-step\"><div class=\"step-num\">1</div><div class=\"step-text\"><h4>Диагностика</h4><p>Определение источников шума и вибрации</p></div></div><div class=\"service-step\"><div class=\"step-num\">2</div><div class=\"step-text\"><h4>Разборка</h4><p>Аккуратный демонтаж элементов салона</p></div></div><div class=\"service-step\"><div class=\"step-num\">3</div><div class=\"step-text\"><h4>Монтаж</h4><p>Нанесение вибро и шумоизоляционных материалов</p></div></div><div class=\"service-step\"><div class=\"step-num\">4</div><div class=\"step-text\"><h4>Сборка</h4><p>Сборка салона и контроль качества</p></div></div></div></div></div></div></div></section><div class=\"marquee-section\"><div class=\"marquee-track\" data-direction=\"1\" data-speed=\"0.8\"><div class=\"marquee-content\"><span class=\"marquee-item\">ХИМЧИСТКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">ОКЛЕЙКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ТОНИРОВКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">АНТИДОЖДЬ</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">КЕРАМИКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">БЛЕСК</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ЧЕРНЕНИЕ</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">КАЧЕСТВО</span><span class=\"marquee-dot\"></span></div><div class=\"marquee-content\" aria-hidden=\"true\"><span class=\"marquee-item\">ХИМЧИСТКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">ОКЛЕЙКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ТОНИРОВКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">АНТИДОЖДЬ</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">КЕРАМИКА</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">БЛЕСК</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item\">ЧЕРНЕНИЕ</span><span class=\"marquee-dot\"></span> <span class=\"marquee-item filled\">КАЧЕСТВО</span><span class=\"marquee-dot\"></span></div></div></div><section class=\"process\" id=\"process\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Как</span> <span class=\"word\">мы</span> <span class=\"word\">работаем</span></h2><p class=\"section-subtitle\">Прозрачный процесс от записи до выдачи автомобиля</p></div><div class=\"process-grid\"><div class=\"process-card glass\"><div class=\"process-num\">01</div><h3>Осмотр</h3><p>Диагностика состояния кузова и салона, замер толщины ЛКП, проверка на наличие сколов и царапин</p></div><div class=\"process-card glass\"><div class=\"process-num\">02</div><h3>Согласование</h3><p>Обсуждаем объём работ, сроки и стоимость</p></div><div class=\"process-card glass\"><div class=\"process-num\">03</div><h3>Подготовка</h3><p>Тщательная мойка автомобиля, удаление битума и металлических вкраплений</p></div><div class=\"process-card glass\"><div class=\"process-num\">04</div><h3>Выполнение</h3><p>Проведение детейлинг-работ опытными мастерами</p></div><div class=\"process-card glass\"><div class=\"process-num\">05</div><h3>Контроль</h3><p>Проверка качества при специальном освещении</p></div><div class=\"process-card glass\"><div class=\"process-num\">06</div><h3>Выдача</h3><p>Демонстрация результата и рекомендации по уходу</p></div></div></div></section><section class=\"gallery\" id=\"cases\" style=\"padding:80px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Наши</span> <span class=\"word\">кейсы</span></h2><p class=\"section-subtitle\">Воспользуйтесь нашим опытом</p></div><div class=\"cases-bento\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -328,7 +328,7 @@ func IndexPage(services []Service, cases []Case) templ.Component {
 					}
 				}
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 26, "</div></div></section><section class=\"gallery\" id=\"gallery\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Портфолио</span></h2><p class=\"section-subtitle\">Наши работы в детейлинг-студии</p></div><div class=\"gallery-grid\"><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_0240.webp\" alt=\"Mercedes GLS\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_0243.webp\" alt=\"Детейлинг\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_1845.webp\" alt=\"Студия\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_1848.webp\" alt=\"Работа\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_0353.webp\" alt=\"Полировка\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_9886.webp\" alt=\"Результат\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_9887.webp\" alt=\"Детейлинг\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_0370.webp\" alt=\"Оклейка\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_7242.webp\" alt=\"Студия E.V.A.\" loading=\"lazy\"></div></div></div></section><section class=\"cta\" id=\"cta\"><div class=\"container\"><div class=\"cta-card glass\"><h2>Готовы преобразить ваш автомобиль?</h2><p>Оставьте заявку — мы свяжемся с вами и подберём оптимальный комплекс услуг</p><button class=\"btn-primary\" data-open-modal style=\"position:relative;\"><span>Записаться на детейлинг</span> <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></button></div></div></section><section class=\"contacts\" id=\"contacts\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Контакты</span></h2><p class=\"section-subtitle\">Приезжайте — покажем студию лично</p></div><div class=\"contacts-grid\"><div class=\"contacts-info\"><div class=\"contact-item\"><div class=\"contact-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z\"></path><circle cx=\"12\" cy=\"10\" r=\"3\"></circle></svg></div><div class=\"contact-text\"><h4>Адрес</h4><p>г. Сургут, ул. Аэрофлотская 30, стр. 2<br>Детейлинг-центр на АЗК</p></div></div><div class=\"contact-item\"><div class=\"contact-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z\"></path></svg></div><div class=\"contact-text\"><h4>Телефон</h4><a href=\"tel: +79048867777\">+7 904 886 77 77</a></div></div><div class=\"contact-item\"><div class=\"contact-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 16 14\"></polyline></svg></div><div class=\"contact-text\"><h4>Режим работы</h4><p>Пн-Сб: 09:00 — 18:00<br>Вс: выходной</p></div></div></div><div class=\"contacts-map\" id=\"mapContainer\" data-src=\"https://yandex.ru/map-widget/v1/?um=constructor%3A5c7e4b2e2d3c4a5f6b7c8d9e0f1a2b3c&amp;source=constructor&amp;ll=73.390679%2C61.310330&amp;z=16&amp;pt=73.390679%2C61.310330\"></div></div></div></section>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 26, "</div></div></section><section class=\"gallery\" id=\"gallery\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Портфолио</span></h2><p class=\"section-subtitle\">Наши работы в детейлинг-студии</p></div><div class=\"gallery-grid\"><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_0240.webp\" alt=\"Mercedes GLS\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_0243.webp\" alt=\"Детейлинг\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_1845.webp\" alt=\"Студия\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_1848.webp\" alt=\"Работа\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_0353.webp\" alt=\"Полировка\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_9886.webp\" alt=\"Результат\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_9887.webp\" alt=\"Детейлинг\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_0370.webp\" alt=\"Оклейка\" loading=\"lazy\"></div><div class=\"gallery-item\"><img src=\"/static/imgs/IMG_7242.webp\" alt=\"Студия EvaStyle detailing\" loading=\"lazy\"></div></div></div></section><section class=\"cta\" id=\"cta\"><div class=\"container\"><div class=\"cta-card glass\"><h2>Готовы преобразить ваш автомобиль?</h2><p>Оставьте заявку — мы свяжемся с вами и подберём оптимальный комплекс услуг</p><button class=\"btn-primary\" data-open-modal style=\"position:relative;\"><span>Записаться на детейлинг</span> <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></button></div></div></section><section class=\"contacts\" id=\"contacts\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Контакты</span></h2><p class=\"section-subtitle\">Приезжайте — покажем студию лично</p></div><div class=\"contacts-grid\"><div class=\"contacts-info\"><div class=\"contact-item\"><div class=\"contact-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z\"></path><circle cx=\"12\" cy=\"10\" r=\"3\"></circle></svg></div><div class=\"contact-text\"><h4>Адрес</h4><p>г. Сургут, ул. Аэрофлотская 30, стр. 2<br>Детейлинг-центр на АЗК</p></div></div><div class=\"contact-item\"><div class=\"contact-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z\"></path></svg></div><div class=\"contact-text\"><h4>Телефон</h4><a href=\"tel: +79048867777\">+7 904 886 77 77</a></div></div><div class=\"contact-item\"><div class=\"contact-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 16 14\"></polyline></svg></div><div class=\"contact-text\"><h4>Режим работы</h4><p>Пн-Сб: 09:00 — 18:00<br>Вс: выходной</p></div></div></div><div class=\"contacts-map\" id=\"mapContainer\" data-src=\"https://yandex.ru/map-widget/v1/?um=constructor%3A5c7e4b2e2d3c4a5f6b7c8d9e0f1a2b3c&amp;source=constructor&amp;ll=73.390679%2C61.310330&amp;z=16&amp;pt=73.390679%2C61.310330\"></div></div></div></section>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -375,7 +375,7 @@ func ServicePage(service Service, services []Service) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 27, "<section class=\"page-hero\" style=\"min-height: 45vh;\"><div class=\"container\" style=\"display: flex; flex-direction: column; align-items: end;\"><div class=\"hero-content\" style=\"visibility:visible; display: flex; flex-direction: column; align-items: center;\"><h1 style=\"font-size:clamp(2rem,4vw,3.5rem);font-weight:800;margin-bottom:16px;letter-spacing:-0.03em;\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 27, "<section class=\"page-hero\" style=\"min-height: 45vh;\"><div class=\"container\" style=\"display: flex; flex-direction: column; align-items: end;\"><div class=\"hero-content\" style=\"visibility:visible; display: flex; flex-direction: column; align-items: center;\"><h1 style=\"font-size:clamp(2rem,3vw,3.5rem);font-weight:800;margin-bottom:16px;letter-spacing:-0.03em;\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -532,56 +532,66 @@ func ServicePage(service Service, services []Service) templ.Component {
 					return templ_7745c5c3_Err
 				}
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 44, "</div></div></div></section><section class=\"gallery\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Примеры</span> <span class=\"word\">работ</span></h2></div><div class=\"gallery-grid\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 44, "</div></div></div></section><section class=\"gallery\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Примеры</span> <span class=\"word\">работ</span></h2></div>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			if service.Slug == "antigravel" {
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 45, "<div class=\"ppf-type-labels\" style=\"display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px;\"><span style=\"text-align:center;font-weight:600;\">Цветной</span> <span style=\"text-align:center;font-weight:600;\">Обычный</span> <span style=\"text-align:center;font-weight:600;\">Матовый / Сатиновый</span></div>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 46, "<div class=\"gallery-grid\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			for _, img := range service.Gallery {
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 45, "<div class=\"gallery-item\"><img src=\"")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 47, "<div class=\"gallery-item\"><img src=\"")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				var templ_7745c5c3_Var34 string
 				templ_7745c5c3_Var34, templ_7745c5c3_Err = templ.JoinStringErrs("/static/imgs/" + img)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 430, Col: 39}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 437, Col: 39}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var34))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 46, "\" alt=\"")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 48, "\" alt=\"")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				var templ_7745c5c3_Var35 string
 				templ_7745c5c3_Var35, templ_7745c5c3_Err = templ.JoinStringErrs(service.Title)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 430, Col: 61}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 437, Col: 61}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var35))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 47, "\" loading=\"lazy\"></div>")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 49, "\" loading=\"lazy\"></div>")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 48, "</div></div></section><section class=\"cta\"><div class=\"container\"><div class=\"cta-card glass\"><h2>Запишитесь к нам!</h2><p>Оставьте заявку — мы подберём оптимальный вариант для вашего автомобиля</p><button class=\"btn-primary\" data-open-modal data-service=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 50, "</div></div></section><section class=\"cta\"><div class=\"container\"><div class=\"cta-card glass\"><h2>Запишитесь к нам!</h2><p>Оставьте заявку — мы подберём оптимальный вариант для вашего автомобиля</p><button class=\"btn-primary\" data-open-modal data-service=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var36 string
 			templ_7745c5c3_Var36, templ_7745c5c3_Err = templ.JoinStringErrs(service.Title)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 441, Col: 77}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 448, Col: 77}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var36))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 49, "\"><span>Оставить заявку</span> <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></button></div></div></section>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 51, "\"><span>Оставить заявку</span> <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></button></div></div></section>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -628,234 +638,234 @@ func CasePage(c Case, cases []Case, services []Service) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 50, "<section class=\"page-hero\" style=\"min-height: 60vh\"><div class=\"hero-bg\"><img src=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 52, "<section class=\"page-hero\" style=\"min-height: 60vh\"><div class=\"hero-bg\"><img src=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var39 string
 			templ_7745c5c3_Var39, templ_7745c5c3_Err = templ.JoinStringErrs("/static/imgs/" + c.HeroImage)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 455, Col: 44}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 462, Col: 44}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var39))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 51, "\" alt=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 53, "\" alt=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var40 string
 			templ_7745c5c3_Var40, templ_7745c5c3_Err = templ.JoinStringErrs(c.Car)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 455, Col: 58}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 462, Col: 58}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var40))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 52, "\"></div><div class=\"container\"><div class=\"hero-content\" style=\"visibility:visible;\"><div class=\"hero-label\" style=\"opacity:1;\">Кейс</div><h1 style=\"font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:16px;\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 54, "\"></div><div class=\"container\"><div class=\"hero-content\" style=\"visibility:visible;\"><div class=\"hero-label\" style=\"opacity:1;\">Кейс</div><h1 style=\"font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:16px;\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var41 string
 			templ_7745c5c3_Var41, templ_7745c5c3_Err = templ.JoinStringErrs(c.Car)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 460, Col: 116}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 467, Col: 116}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var41))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 53, "</h1><p style=\"font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 55, "</h1><p style=\"font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var42 string
 			templ_7745c5c3_Var42, templ_7745c5c3_Err = templ.JoinStringErrs(c.Title)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 461, Col: 91}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 468, Col: 91}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var42))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 54, "</p><button class=\"btn-primary\" data-open-modal>Записаться</button></div></div></section><section class=\"before-after\" style=\"padding:100px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">До</span> <span class=\"word\">и</span> <span class=\"word\">после</span></h2></div><div class=\"ba-slider-container\"><div class=\"ba-slider\" id=\"baSlider\"><img src=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 56, "</p><button class=\"btn-primary\" data-open-modal>Записаться</button></div></div></section><section class=\"before-after\" style=\"padding:100px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">До</span> <span class=\"word\">и</span> <span class=\"word\">после</span></h2></div><div class=\"ba-slider-container\"><div class=\"ba-slider\" id=\"baSlider\"><img src=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var43 string
 			templ_7745c5c3_Var43, templ_7745c5c3_Err = templ.JoinStringErrs("/static/imgs/" + c.AfterImg)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 473, Col: 45}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 480, Col: 45}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var43))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 55, "\" alt=\"До\" class=\"ba-before\"><img src=\"")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 57, "\" alt=\"До\" class=\"ba-before\"><img src=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var44 string
 			templ_7745c5c3_Var44, templ_7745c5c3_Err = templ.JoinStringErrs("/static/imgs/" + c.BeforeImg)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 474, Col: 46}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 481, Col: 46}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var44))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 56, "\" alt=\"После\" class=\"ba-after\"><div class=\"ba-handle\" id=\"baHandle\"></div><span class=\"ba-label ba-label-before\">До</span> <span class=\"ba-label ba-label-after\">После</span></div></div></div></section><section class=\"case-works\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Выполненные</span> <span class=\"word\">работы</span></h2></div><div class=\"work-grid\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 58, "\" alt=\"После\" class=\"ba-after\"><div class=\"ba-handle\" id=\"baHandle\"></div><span class=\"ba-label ba-label-before\">До</span> <span class=\"ba-label ba-label-after\">После</span></div></div></div></section><section class=\"case-works\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Выполненные</span> <span class=\"word\">работы</span></h2></div><div class=\"work-grid\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			for _, w := range c.Works {
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 57, "<div class=\"process-card glass\"><div class=\"process-num\"></div><h3>")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 59, "<div class=\"process-card glass\"><div class=\"process-num\"></div><h3>")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				var templ_7745c5c3_Var45 string
 				templ_7745c5c3_Var45, templ_7745c5c3_Err = templ.JoinStringErrs(w.Title)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 491, Col: 20}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 498, Col: 20}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var45))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 58, "</h3><p>")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 60, "</h3><p>")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				var templ_7745c5c3_Var46 string
 				templ_7745c5c3_Var46, templ_7745c5c3_Err = templ.JoinStringErrs(w.Description)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 492, Col: 25}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 499, Col: 25}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var46))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 59, "</p></div>")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 61, "</p></div>")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 60, "</div></div></section><section class=\"gallery\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Фотографии</span></h2></div><div class=\"gallery-grid\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 62, "</div></div></section><section class=\"gallery\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Фотографии</span></h2></div><div class=\"gallery-grid\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			for _, img := range c.Gallery {
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 61, "<div class=\"gallery-item\"><img src=\"")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 63, "<div class=\"gallery-item\"><img src=\"")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				var templ_7745c5c3_Var47 string
 				templ_7745c5c3_Var47, templ_7745c5c3_Err = templ.JoinStringErrs("/static/imgs/" + img)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 506, Col: 39}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 513, Col: 39}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var47))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 62, "\" alt=\"")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 64, "\" alt=\"")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 				var templ_7745c5c3_Var48 string
 				templ_7745c5c3_Var48, templ_7745c5c3_Err = templ.JoinStringErrs(c.Car)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 506, Col: 53}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 513, Col: 53}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var48))
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 63, "\" loading=\"lazy\"></div>")
+				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 65, "\" loading=\"lazy\"></div>")
 				if templ_7745c5c3_Err != nil {
 					return templ_7745c5c3_Err
 				}
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 64, "</div></div></section><section style=\"padding:80px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Другие</span> <span class=\"word\">кейсы</span></h2></div><div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 66, "</div></div></section><section style=\"padding:80px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Другие</span> <span class=\"word\">кейсы</span></h2></div><div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			for _, other := range cases {
 				if other.Slug != c.Slug {
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 65, "<a href=\"")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 67, "<a href=\"")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
 					var templ_7745c5c3_Var49 templ.SafeURL
 					templ_7745c5c3_Var49, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL("/cases/" + other.Slug))
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 520, Col: 54}
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 527, Col: 54}
 					}
 					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var49))
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 66, "\" class=\"case-card\"><img src=\"")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 68, "\" class=\"case-card\"><img src=\"")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
 					var templ_7745c5c3_Var50 string
 					templ_7745c5c3_Var50, templ_7745c5c3_Err = templ.JoinStringErrs("/static/imgs/" + other.HeroImage)
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 521, Col: 52}
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 528, Col: 52}
 					}
 					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var50))
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 67, "\" alt=\"")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 69, "\" alt=\"")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
 					var templ_7745c5c3_Var51 string
 					templ_7745c5c3_Var51, templ_7745c5c3_Err = templ.JoinStringErrs(other.Car)
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 521, Col: 70}
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 528, Col: 70}
 					}
 					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var51))
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 68, "\" loading=\"lazy\"><div class=\"case-card-info\"><div><h4>")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 70, "\" loading=\"lazy\"><div class=\"case-card-info\"><div><h4>")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
 					var templ_7745c5c3_Var52 string
 					templ_7745c5c3_Var52, templ_7745c5c3_Err = templ.JoinStringErrs(other.Car)
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 524, Col: 25}
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 531, Col: 25}
 					}
 					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var52))
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 69, "</h4><p style=\"font-size:0.8rem;color:var(--text-secondary);margin-top:4px;\">")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 71, "</h4><p style=\"font-size:0.8rem;color:var(--text-secondary);margin-top:4px;\">")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
 					var templ_7745c5c3_Var53 string
 					templ_7745c5c3_Var53, templ_7745c5c3_Err = templ.JoinStringErrs(other.Title)
 					if templ_7745c5c3_Err != nil {
-						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 525, Col: 95}
+						return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/pages.templ`, Line: 532, Col: 95}
 					}
 					_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var53))
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 70, "</p></div><div class=\"case-card-arrow\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></div></div></a>")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 72, "</p></div><div class=\"case-card-arrow\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M12 5l7 7-7 7\"></path></svg></div></div></a>")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
 				}
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 71, "</div></div></section><section class=\"cta\"><div class=\"container\"><div class=\"cta-card glass\"><h2>Хотите так же?</h2><p>Запишитесь на детейлинг — мы позаботимся о вашем автомобиле</p><button class=\"btn-primary\" data-open-modal>Записаться на детейлинг</button></div></div></section>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 73, "</div></div></section><section class=\"cta\"><div class=\"container\"><div class=\"cta-card glass\"><h2>Хотите так же?</h2><p>Запишитесь на детейлинг — мы позаботимся о вашем автомобиле</p><button class=\"btn-primary\" data-open-modal>Записаться на детейлинг</button></div></div></section>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -902,7 +912,7 @@ func AboutPage(services []Service) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 72, "<section class=\"page-hero\"><div class=\"hero-bg\"><img src=\"/static/imgs/IMG_1845.webp\" alt=\"Студия E.V.A.DETAILING\"></div><div class=\"container\"><div class=\"hero-content\" style=\"visibility:visible; display: flex; flex-direction: column; align-items: center; text-align: center;\"><h1 style=\"font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;\">О студии E.V.A.DETAILING</h1><p style=\"font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;\">Профессиональный детейлинг в Сургуте с 2020 года</p></div></div></section><section class=\"about-content\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">О</span> <span class=\"word\">нас</span></h2></div><div class=\"about-block glass\"><h3>Наша история</h3><p>E.V.A.DETAILING — это детейлинг-студия премиум-класса в Сургуте, основанная в 2020 году.</p><p>Мы верим, что каждый автомобиль заслуживает индивидуального подхода. Поэтому перед началом работы проводим тщательную диагностику и обсуждаем с клиентом все детали. Наша цель — не просто выполнить услугу, а превзойти ожидания.</p></div><div class=\"about-block glass\"><h3>Наш подход</h3><p>Мы используем только проверенные материалы мировых брендов: Koch Chemie, Quantum, Meguiar's, Krytex,  Sonax, Gliss Pro, Gyeon, Llumar. Каждый мастер в команде проходит регулярное обучение и сертификацию. Мы не гонимся за количеством — каждый автомобиль получает столько времени и внимания, сколько ему нужно.</p><p>Студия оборудована гексагональным LED-освещением, которое позволяет выявить мельчайшие дефекты покрытия. Контроль качества — на каждом этапе.</p></div></div></section><section style=\"padding:80px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Наша</span> <span class=\"word\">команда</span></h2></div><div class=\"team-grid\"><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div></div></div></section><section style=\"padding:80px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">В</span> <span class=\"word\">цифрах</span></h2></div><div class=\"about-stats\"><div class=\"stat\"><div class=\"stat-number\">5+</div><div class=\"stat-label\">лет опыта</div></div><div class=\"stat\"><div class=\"stat-number\">1000+</div><div class=\"stat-label\">довольных клиентов</div></div><div class=\"stat\"><div class=\"stat-number\">100%</div><div class=\"stat-label\">премиум материалы</div></div><div class=\"stat\"><div class=\"stat-number\">Год</div><div class=\"stat-label\">гарантии на покрытия</div></div></div></div></section><section class=\"cta\"><div class=\"container\"><div class=\"cta-card glass\"><h2>Доверьте свой автомобиль профессионалам</h2><p>Запишитесь на детейлинг — мы позаботимся о каждой детали</p><button class=\"btn-primary\" data-open-modal>Записаться на детейлинг</button></div></div></section>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 74, "<section class=\"page-hero\" style=\"min-height: 50vh\"><div class=\"hero-bg\"><img src=\"/static/imgs/IMG_1845.webp\" alt=\"Студия EvaStyle detailing\"></div><div class=\"container\"><div class=\"hero-content\" style=\"visibility:visible; display: flex; flex-direction: column; align-items: center; text-align: center;\"><h1 style=\"font-size:clamp(2.2rem,5vw,4rem);font-weight:900;letter-spacing:-0.03em;\">О студии EvaStyle detailing</h1><p style=\"font-size:1.15rem;color:var(--text-secondary);margin-bottom:32px;\">Профессиональный детейлинг в Сургуте с 2020 года</p></div></div></section><section class=\"about-content\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">О</span> <span class=\"word\">нас</span></h2></div><div class=\"about-block glass\"><h3>Наша история</h3><p>EvaStyle detailing — это детейлинг-студия премиум-класса в Сургуте, основанная в 2020 году.</p><p>Мы верим, что каждый автомобиль заслуживает индивидуального подхода. Поэтому перед началом работы проводим тщательную диагностику и обсуждаем с клиентом все детали. Наша цель — не просто выполнить услугу, а превзойти ожидания.</p></div><div class=\"about-block glass\"><h3>Наш подход</h3><p>Мы используем только проверенные материалы мировых брендов: Koch Chemie, Quantum, Meguiar's, Krytex,  Sonax, Gliss Pro, Gyeon, Llumar. Каждый мастер в команде проходит регулярное обучение и сертификацию. Мы не гонимся за количеством — каждый автомобиль получает столько времени и внимания, сколько ему нужно.</p><p>Студия оборудована гексагональным LED-освещением, которое позволяет выявить мельчайшие дефекты покрытия. Контроль качества — на каждом этапе.</p></div></div></section><section style=\"padding:80px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">Наша</span> <span class=\"word\">команда</span></h2></div><div class=\"team-grid\"><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div><div class=\"team-card glass\"><img src=\"/static/imgs/placeholder.webp\" alt=\"Команда\"><h4>Имя</h4><p>Должность</p></div></div></div></section><section style=\"padding:80px 0;\"><div class=\"container\"><div class=\"section-header\"><h2 class=\"section-title\"><span class=\"word\">В</span> <span class=\"word\">цифрах</span></h2></div><div class=\"about-stats\"><div class=\"stat\"><div class=\"stat-number\">5+</div><div class=\"stat-label\">лет опыта</div></div><div class=\"stat\"><div class=\"stat-number\">1000+</div><div class=\"stat-label\">довольных клиентов</div></div><div class=\"stat\"><div class=\"stat-number\">100%</div><div class=\"stat-label\">премиум материалы</div></div><div class=\"stat\"><div class=\"stat-number\">Год</div><div class=\"stat-label\">гарантии на покрытия</div></div></div></div></section><section class=\"cta\"><div class=\"container\"><div class=\"cta-card glass\"><h2>Доверьте свой автомобиль профессионалам</h2><p>Запишитесь на детейлинг — мы позаботимся о каждой детали</p><button class=\"btn-primary\" data-open-modal>Записаться на детейлинг</button></div></div></section>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

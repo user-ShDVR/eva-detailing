@@ -150,7 +150,7 @@ section { position: relative; z-index: 1; }
 .logo .accent { color: var(--accent); }
 
 .nav-logo {
-    height: 40px;
+    height: 80px;
     width: auto;
     display: block;
 }
@@ -501,7 +501,7 @@ section { position: relative; z-index: 1; }
 }
 
 /* ===== About ===== */
-.about { padding: 140px 0; }
+.about { padding: 80px 0; }
 
 .about-card {
     padding: 64px;
@@ -592,7 +592,7 @@ section { position: relative; z-index: 1; }
 }
 
 /* ===== Services with Tabs ===== */
-.services { padding: 140px 0; }
+.services { padding: 80px 0; }
 
 .services-tabs {
     display: flex;
@@ -699,6 +699,24 @@ section { position: relative; z-index: 1; }
     margin-bottom: 24px;
 }
 
+.ppf-type-labels {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.ppf-type-labels span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.02);
+}
+
 .service-tags {
     display: flex;
     flex-wrap: wrap;
@@ -768,7 +786,7 @@ section { position: relative; z-index: 1; }
 }
 
 /* ===== Process ===== */
-.process { padding: 140px 0; }
+.process { padding: 80px 0; }
 
 .process-grid {
     display: grid;
@@ -803,7 +821,7 @@ section { position: relative; z-index: 1; }
 }
 
 /* ===== Before/After ===== */
-.before-after { padding: 140px 0; }
+.before-after { padding: 80px 0; }
 
 .ba-slider-container {
     max-width: 800px;
@@ -931,7 +949,7 @@ section { position: relative; z-index: 1; }
 }
 
 /* ===== Gallery ===== */
-.gallery { padding: 140px 0; }
+.gallery { padding: 80px 0; }
 
 .gallery-grid {
     display: grid;
@@ -971,7 +989,7 @@ section { position: relative; z-index: 1; }
 
 /* ===== CTA ===== */
 .cta {
-    padding: 140px 0;
+    padding: 80px 0;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -1007,7 +1025,7 @@ section { position: relative; z-index: 1; }
 }
 
 /* ===== Contacts ===== */
-.contacts { padding: 140px 0; }
+.contacts { padding: 80px 0; }
 
 .contacts-grid {
     display: grid;
@@ -1501,7 +1519,7 @@ section { position: relative; z-index: 1; }
 
 /* ===== Page Hero (for service/case/about pages) ===== */
 .page-hero {
-    min-height: 45vh;
+    min-height: 50vh;
     display: flex;
     align-items: end;
     padding: 0 0 80px;
@@ -1683,7 +1701,7 @@ section { position: relative; z-index: 1; }
 .team-card h4 { font-size: 1.1rem; margin-bottom: 4px; }
 .team-card p { color: var(--text-secondary); font-size: 0.9rem; }
 
-.about-content { padding: 100px 0; }
+.about-content { padding-top: 100px 0; }
 
 .about-block { padding: 48px; margin-bottom: 48px; }
 .about-block h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 16px; }
@@ -1727,6 +1745,7 @@ section { position: relative; z-index: 1; }
     .stat-number { font-size: 1.8rem; }
 
     .service-detail { grid-template-columns: 1fr; }
+    .ppf-type-labels { grid-template-columns: 1fr; }
 
     .process-grid {
         grid-template-columns: 1fr;
