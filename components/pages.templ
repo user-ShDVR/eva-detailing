@@ -431,7 +431,7 @@ templ ServicePage(service Service, services []Service) {
 				// 		<span style="text-align:center;font-weight:600;">Матовый / Сатиновый</span>
 				// 	</div>
 				// }
-				<div class="gallery-grid">
+				<div class="gallery-grid" style="min-width: 800px; grid-template-columns: repeat(3, 1fr)">
 					if service.Slug == "antigravel" {
 							<span style="text-align:center;font-weight:600;">Цветной</span>
 							<span style="text-align:center;font-weight:600;">Обычный</span>

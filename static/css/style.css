@@ -955,7 +955,6 @@ section { position: relative; z-index: 1; }
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    min-width: 800px;
 }
 
 .gallery-item {
