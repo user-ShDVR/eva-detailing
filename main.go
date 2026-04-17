@@ -5,11 +5,20 @@ import (
 	"encoding/json"
 	"eva-detailing/components"
 	"fmt"
+	"io/fs"
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"strings"
 	"time"
+
+	"github.com/a-h/templ"
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/logger"
+	"github.com/tdewolff/minify/v2"
+	"github.com/tdewolff/minify/v2/css"
+	"github.com/tdewolff/minify/v2/js"
 )
 
 // ============================
@@ -36,7 +45,7 @@ var servicesList = []components.Service{
 			{Name: "Фары (пара)", Price: "от 5 000 ₽"},
 			{Name: "Полная оклейка", Price: "от 150 000 ₽"},
 		},
-		Gallery: []string{"опп.webp", "опп2.webp", "опп3.webp", "цп.webp", "цп3.webp", "цп4.webp", "цп5.webp", "цп6.webp", "цп7.webp", "цп8.webp", "цп9.webp", "оп.webp", "оп2.webp", "оп3.webp", "оп4.webp", "оп5.webp", "оп6.webp", "оп7.webp", "оп8.webp", },
+		Gallery: []string{"опп.webp", "опп2.webp", "опп3.webp", "цп.webp", "цп3.webp", "цп4.webp", "цп5.webp", "цп6.webp", "цп7.webp", "цп8.webp", "цп9.webp", "оп.webp", "оп2.webp", "оп3.webp", "оп4.webp", "оп5.webp", "оп6.webp", "оп7.webp", "оп8.webp"},
 	},
 	{
 		Slug:        "antichrome",
@@ -76,7 +85,7 @@ var servicesList = []components.Service{
 			{Name: "Восстановительная полировка", Price: "от 15 000 ₽"},
 			{Name: "Абразивная полировка", Price: "от 20 000 ₽"},
 		},
-		Gallery: []string{"FullSizeRender.webp", "FullSizeRender 2.webp", "плп.webp", "плп2.webp", "плп3.webp", "плп6.webp", "плп7.webp", "плп8.webp", "плп9.webp", "плп10.webp", "плп11.webp", "плп12.webp", },
+		Gallery: []string{"FullSizeRender.webp", "FullSizeRender 2.webp", "плп.webp", "плп2.webp", "плп3.webp", "плп6.webp", "плп7.webp", "плп8.webp", "плп9.webp", "плп10.webp", "плп11.webp", "плп12.webp"},
 	},
 	{
 		Slug:        "optics",
@@ -160,7 +169,7 @@ var servicesList = []components.Service{
 		Subtitle:    "Безопасная и эффективная очистка двигателя и его элементов",
 		Description: "Чистим все зоны: крышку двигателя, арки, щитки, радиаторную решётку, труднодоступные узлы. Аккуратно, без лишнего воздействия и с гарантией запуска.",
 		HeroImage:   "IMG_6186.webp",
-		Tags: []string{"Двигатель", "Моторный отсек", "Радиатор", "Подкапотка", "Электроника", "Патрубки"},		
+		Tags:        []string{"Двигатель", "Моторный отсек", "Радиатор", "Подкапотка", "Электроника", "Патрубки"},
 		Steps: []components.Step{
 			{Title: "Осмотр загрязнений", Description: "Оцениваем степень запылённости и маслянистые отложения"},
 			{Title: "Защита электроники", Description: "Герметизируем разъёмы, генератор, воздушный фильтр"},
@@ -291,6 +300,10 @@ var (
 	chatID   string
 )
 
+// ============================
+// Главная функция
+// ============================
+
 func main() {
 	botToken = os.Getenv("BOT_TOKEN")
 	chatID = os.Getenv("CHAT_ID")
@@ -299,80 +312,181 @@ func main() {
 		port = "3000"
 	}
 
-	mux := http.NewServeMux()
+	// Минификация статических файлов при старте (не блокирует запуск при ошибке)
+	if err := minifyStaticFiles("./static"); err != nil {
+		log.Printf("Warning: minify static files failed: %v", err)
+	}
 
-	// Pages
-	mux.HandleFunc("GET /{$}", handleIndex)
-	mux.HandleFunc("GET /about", handleAbout)
-	mux.HandleFunc("GET /services/{slug}", handleService)
-	mux.HandleFunc("GET /cases/{slug}", handleCase)
+	app := fiber.New(fiber.Config{
+		AppName:      "EVA Detailing",
+		ErrorHandler: customErrorHandler,
+	})
+
+	app.Use(logger.New())
+
+	// Статические файлы с поддержкой минифицированных версий
+	app.Use("/static", staticWithMin)
+
+	// Маршруты страниц
+	app.Get("/", handleIndex)
+	app.Get("/about", handleAbout)
+	app.Get("/services/:slug", handleService)
+	app.Get("/cases/:slug", handleCase)
 
 	// API
-	mux.HandleFunc("POST /api/booking", handleBooking)
+	app.Post("/api/booking", handleBooking)
 
-	// Static files
-	fs := http.FileServer(http.Dir("static"))
-	mux.Handle("GET /static/", http.StripPrefix("/static/", fs))
+	// 404
+	app.Use(notFoundHandler)
 
 	log.Printf("Server starting on :%s", port)
 	if botToken == "" || chatID == "" {
 		log.Println("WARNING: BOT_TOKEN or CHAT_ID not set. Bookings will be logged only.")
 	}
 
-	if err := http.ListenAndServe(":"+port, mux); err != nil {
+	if err := app.Listen(":" + port); err != nil {
 		log.Fatal(err)
 	}
 }
 
 // ============================
-// Page Handlers
+// Рендеринг Templ
 // ============================
 
-func handleIndex(w http.ResponseWriter, r *http.Request) {
-	components.IndexPage(servicesList, casesList).Render(r.Context(), w)
+func RenderTempl(c *fiber.Ctx, component templ.Component) error {
+	c.Set("Content-Type", "text/html; charset=utf-8")
+	return component.Render(c.Context(), c.Response().BodyWriter())
 }
 
-func handleAbout(w http.ResponseWriter, r *http.Request) {
-	components.AboutPage(servicesList).Render(r.Context(), w)
+// ============================
+// Middleware для статики с .min
+// ============================
+
+func staticWithMin(c *fiber.Ctx) error {
+	urlPath := strings.TrimPrefix(c.Path(), "/static")
+	if urlPath == "" {
+		urlPath = "/"
+	}
+
+	// Проверяем наличие минифицированной версии для .css и .js
+	if strings.HasSuffix(urlPath, ".css") || strings.HasSuffix(urlPath, ".js") {
+		ext := filepath.Ext(urlPath)
+		base := strings.TrimSuffix(urlPath, ext)
+		minPath := base + ".min" + ext
+		fullMinPath := filepath.Join("./static", minPath)
+
+		if _, err := os.Stat(fullMinPath); err == nil {
+			return c.SendFile(fullMinPath)
+		}
+	}
+
+	// Отдаём оригинал, если он есть
+	fullPath := filepath.Join("./static", urlPath)
+	if _, err := os.Stat(fullPath); err == nil {
+		return c.SendFile(fullPath)
+	}
+
+	return c.Next()
 }
 
-func handleService(w http.ResponseWriter, r *http.Request) {
-	slug := r.PathValue("slug")
+// ============================
+// Минификация статических файлов
+// ============================
+
+func minifyStaticFiles(root string) error {
+	m := minify.New()
+	m.AddFunc("text/css", css.Minify)
+	m.AddFunc("application/javascript", js.Minify)
+	m.AddFunc("text/javascript", js.Minify)
+
+	return filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		if d.IsDir() {
+			return nil
+		}
+
+		ext := strings.ToLower(filepath.Ext(path))
+		if ext != ".css" && ext != ".js" {
+			return nil
+		}
+
+		// Пропускаем уже существующие .min файлы
+		if strings.HasSuffix(path, ".min.css") || strings.HasSuffix(path, ".min.js") {
+			return nil
+		}
+
+		src, err := os.ReadFile(path)
+		if err != nil {
+			return fmt.Errorf("read %s: %w", path, err)
+		}
+
+		mediatype := "text/css"
+		if ext == ".js" {
+			mediatype = "application/javascript"
+		}
+		minified, err := m.Bytes(mediatype, src)
+		if err != nil {
+			return fmt.Errorf("minify %s: %w", path, err)
+		}
+
+		base := strings.TrimSuffix(path, ext)
+		minPath := base + ".min" + ext
+		if err := os.WriteFile(minPath, minified, 0644); err != nil {
+			return fmt.Errorf("write %s: %w", minPath, err)
+		}
+
+		log.Printf("Minified: %s -> %s", path, minPath)
+		return nil
+	})
+}
+
+// ============================
+// Обработчики страниц
+// ============================
+
+func handleIndex(c *fiber.Ctx) error {
+	return RenderTempl(c, components.IndexPage(servicesList, casesList))
+}
+
+func handleAbout(c *fiber.Ctx) error {
+	return RenderTempl(c, components.AboutPage(servicesList))
+}
+
+func handleService(c *fiber.Ctx) error {
+	slug := c.Params("slug")
 	svc, ok := servicesMap[slug]
 	if !ok {
-		http.NotFound(w, r)
-		return
+		return c.Status(fiber.StatusNotFound).SendString("Service not found")
 	}
-	components.ServicePage(*svc, servicesList).Render(r.Context(), w)
+	return RenderTempl(c, components.ServicePage(*svc, servicesList))
 }
 
-func handleCase(w http.ResponseWriter, r *http.Request) {
-	slug := r.PathValue("slug")
-	c, ok := casesMap[slug]
+func handleCase(c *fiber.Ctx) error {
+	slug := c.Params("slug")
+	cse, ok := casesMap[slug]
 	if !ok {
-		http.NotFound(w, r)
-		return
+		return c.Status(fiber.StatusNotFound).SendString("Case not found")
 	}
-	components.CasePage(*c, casesList, servicesList).Render(r.Context(), w)
+	return RenderTempl(c, components.CasePage(*cse, casesList, servicesList))
 }
 
 // ============================
-// Booking API
+// API бронирования
 // ============================
 
-func handleBooking(w http.ResponseWriter, r *http.Request) {
+func handleBooking(c *fiber.Ctx) error {
 	var req BookingRequest
-	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-		http.Error(w, `{"error":"invalid request body"}`, http.StatusBadRequest)
-		return
+	if err := c.BodyParser(&req); err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "invalid request body"})
 	}
 
 	req.Name = strings.TrimSpace(req.Name)
 	req.Phone = strings.TrimSpace(req.Phone)
 
 	if req.Name == "" || req.Phone == "" {
-		http.Error(w, `{"error":"name and phone are required"}`, http.StatusBadRequest)
-		return
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "name and phone are required"})
 	}
 
 	message := formatMessage(req)
@@ -381,14 +495,11 @@ func handleBooking(w http.ResponseWriter, r *http.Request) {
 	if botToken != "" && chatID != "" {
 		if err := sendTelegram(message); err != nil {
 			log.Printf("Failed to send to Telegram: %v", err)
-			http.Error(w, `{"error":"failed to send notification"}`, http.StatusInternalServerError)
-			return
+			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "failed to send notification"})
 		}
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(`{"ok":true}`))
+	return c.JSON(fiber.Map{"ok": true})
 }
 
 func formatMessage(req BookingRequest) string {
@@ -437,4 +548,21 @@ func sendTelegram(text string) error {
 		return fmt.Errorf("telegram status %d", resp.StatusCode)
 	}
 	return nil
+}
+
+// ============================
+// Обработчики ошибок
+// ============================
+
+func customErrorHandler(c *fiber.Ctx, err error) error {
+	code := fiber.StatusInternalServerError
+	if e, ok := err.(*fiber.Error); ok {
+		code = e.Code
+	}
+	log.Printf("Error %d: %v", code, err)
+	return c.Status(code).SendString("Internal Server Error")
+}
+
+func notFoundHandler(c *fiber.Ctx) error {
+	return c.Status(fiber.StatusNotFound).SendString("Page not found")
 }
