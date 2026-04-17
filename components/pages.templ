@@ -420,18 +420,23 @@ templ ServicePage(service Service, services []Service) {
 			</div>
 		</section>
 		<section class="gallery">
-			<div class="container">
+			<div class="container" >
 				<div class="section-header">
 					<h2 class="section-title"><span class="word">Примеры</span> <span class="word">работ</span></h2>
 				</div>
-				if service.Slug == "antigravel" {
-					<div class="ppf-type-labels" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px;">
-						<span style="text-align:center;font-weight:600;">Цветной</span>
-						<span style="text-align:center;font-weight:600;">Обычный</span>
-						<span style="text-align:center;font-weight:600;">Матовый / Сатиновый</span>
-					</div>
-				}
+				// if service.Slug == "antigravel" {
+				// 	<div class="ppf-type-labels" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px;">
+				// 		<span style="text-align:center;font-weight:600;">Цветной</span>
+				// 		<span style="text-align:center;font-weight:600;">Обычный</span>
+				// 		<span style="text-align:center;font-weight:600;">Матовый / Сатиновый</span>
+				// 	</div>
+				// }
 				<div class="gallery-grid">
+					if service.Slug == "antigravel" {
+							<span style="text-align:center;font-weight:600;">Цветной</span>
+							<span style="text-align:center;font-weight:600;">Обычный</span>
+							<span style="text-align:center;font-weight:600;">Матовый / Сатиновый</span>
+						}
 					for _, img := range service.Gallery {
 						<div class="gallery-item">
 							<img src={ "/static/imgs/" + img } alt={ service.Title } loading="lazy"/>
