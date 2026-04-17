@@ -15,6 +15,7 @@ import (
 
 	"github.com/a-h/templ"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/compress"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/tdewolff/minify/v2"
 	"github.com/tdewolff/minify/v2/css"
@@ -305,39 +306,45 @@ var (
 // ============================
 
 func main() {
-	botToken = os.Getenv("BOT_TOKEN")
-	chatID = os.Getenv("CHAT_ID")
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "3000"
-	}
+    botToken = os.Getenv("BOT_TOKEN")
+    chatID = os.Getenv("CHAT_ID")
+    port := os.Getenv("PORT")
+    if port == "" {
+        port = "3000"
+    }
 
-	// Минификация статических файлов при старте (не блокирует запуск при ошибке)
-	if err := minifyStaticFiles("./static"); err != nil {
-		log.Printf("Warning: minify static files failed: %v", err)
-	}
+    // Минификация статических файлов при старте
+    if err := minifyStaticFiles("./static"); err != nil {
+        log.Printf("Warning: minify static files failed: %v", err)
+    }
 
-	app := fiber.New(fiber.Config{
-		AppName:      "EVA Detailing",
-		ErrorHandler: customErrorHandler,
-	})
+    app := fiber.New(fiber.Config{
+        AppName:      "EVA Detailing",
+        ErrorHandler: customErrorHandler,
+    })
 
-	app.Use(logger.New())
+    // Сжатие HTTP-ответов (gzip, deflate, brotli)
+    app.Use(compress.New(compress.Config{
+        Level: compress.LevelBestSpeed,
+    }))
 
-	// Статические файлы с поддержкой минифицированных версий
-	app.Use("/static", staticWithMin)
+    // Логирование запросов
+    app.Use(logger.New())
 
-	// Маршруты страниц
-	app.Get("/", handleIndex)
-	app.Get("/about", handleAbout)
-	app.Get("/services/:slug", handleService)
-	app.Get("/cases/:slug", handleCase)
+    // Статические файлы с поддержкой минифицированных версий
+    app.Use("/static", staticWithMin)
 
-	// API
-	app.Post("/api/booking", handleBooking)
+    // Маршруты страниц
+    app.Get("/", handleIndex)
+    app.Get("/about", handleAbout)
+    app.Get("/services/:slug", handleService)
+    app.Get("/cases/:slug", handleCase)
 
-	// 404
-	app.Use(notFoundHandler)
+    // API
+    app.Post("/api/booking", handleBooking)
+
+    // 404
+    app.Use(notFoundHandler)
 
 	log.Printf("Server starting on :%s", port)
 	if botToken == "" || chatID == "" {
