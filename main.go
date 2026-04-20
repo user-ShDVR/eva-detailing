@@ -573,3 +573,37 @@ func customErrorHandler(c *fiber.Ctx, err error) error {
 func notFoundHandler(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusNotFound).SendString("Page not found")
 }
+
+// ============================
+// Middleware для кэширования статики
+// ============================
+
+func cacheControlMiddleware(c *fiber.Ctx) error {
+	// Проверяем, включено ли кэширование
+	if os.Getenv("ENABLE_CACHE") != "true" {
+		return c.Next()
+	}
+
+	// Путь запроса
+	path := c.Path()
+
+	// Кэшируем только статические файлы
+	if strings.HasPrefix(path, "/static/") {
+		// Определяем тип файла по расширению
+		ext := strings.ToLower(filepath.Ext(path))
+		
+		switch ext {
+		case ".css", ".js", ".webp", ".jpg", ".jpeg", ".png", ".svg", ".ico", ".woff", ".woff2":
+			// 7 дней в секундах = 604800
+			c.Set("Cache-Control", "public, max-age=604800, immutable")
+		case ".html", ".htm":
+			// HTML кэшируем на 1 час
+			c.Set("Cache-Control", "public, max-age=3600")
+		default:
+			// Остальное на 1 день
+			c.Set("Cache-Control", "public, max-age=86400")
+		}
+	}
+
+	return c.Next()
+}
