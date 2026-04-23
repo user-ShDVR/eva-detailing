@@ -331,6 +331,9 @@ func main() {
     // Логирование запросов
     app.Use(logger.New())
 
+    // 🔥 Кэширование статики (включается через ENABLE_CACHE=true)
+    app.Use(cacheControlMiddleware)
+
     // Статические файлы с поддержкой минифицированных версий
     app.Use("/static", staticWithMin)
 
@@ -346,14 +349,21 @@ func main() {
     // 404
     app.Use(notFoundHandler)
 
-	log.Printf("Server starting on :%s", port)
-	if botToken == "" || chatID == "" {
-		log.Println("WARNING: BOT_TOKEN or CHAT_ID not set. Bookings will be logged only.")
-	}
+    log.Printf("Server starting on :%s", port)
+    if botToken == "" || chatID == "" {
+        log.Println("WARNING: BOT_TOKEN or CHAT_ID not set. Bookings will be logged only.")
+    }
 
-	if err := app.Listen(":" + port); err != nil {
-		log.Fatal(err)
-	}
+    // Информация о статусе кэширования
+    if os.Getenv("ENABLE_CACHE") == "true" {
+        log.Println("✅ Cache ENABLED (7 days for static files)")
+    } else {
+        log.Println("⚠️  Cache DISABLED (development mode)")
+    }
+
+    if err := app.Listen(":" + port); err != nil {
+        log.Fatal(err)
+    }
 }
 
 // ============================
