@@ -46,11 +46,6 @@ templ Layout(pageTitle string, services []Service, pageScript string) {
 
 		<div class="mobile-nav" id="mobileNav">
 			<a href="/#services" data-nav>Услуги</a>
-			<div class="mobile-sub-links">
-				for _, s := range services {
-					<a href={ templ.SafeURL("/services/" + s.Slug) }>{ s.Title }</a>
-				}
-			</div>
 			<a href="/#cases" data-nav>Кейсы</a>
 			<a href="/about">О нас</a>
 			<a href="/#contacts" data-nav>Контакты</a>
