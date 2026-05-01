@@ -115,12 +115,16 @@ section { position: relative; z-index: 1; }
 
 /* ===== Navbar ===== */
 .navbar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     padding: 20px 0;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    border-color: black;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all .4s;
 }
 
 .navbar.scrolled {
@@ -267,7 +271,7 @@ section { position: relative; z-index: 1; }
 
 /* ===== Hero ===== */
 .hero {
-    min-height: 100vh;
+    min-height: calc(100vh - 121px);
     display: flex;
     align-items: center;
     justify-content: center;
