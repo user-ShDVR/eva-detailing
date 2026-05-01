@@ -3,7 +3,6 @@
 
     const lenis = window.__lenis;
     const analytics = window.__analytics;
-    const reduceMotion = Boolean(window.__reduceMotion);
 
     // ============================
     // Preloader
@@ -11,32 +10,28 @@
     const preloader = document.getElementById('preloader');
     if (preloader) {
         const preloaderChars = preloader.querySelectorAll('.char');
-        if (reduceMotion) {
-            preloader.style.display = 'none';
-            heroReveal();
-        } else {
-            lenis.stop();
-            const preloaderTl = gsap.timeline({
-                onComplete: () => {
-                    gsap.to(preloader, {
-                        clipPath: 'inset(0 0 100% 0)',
-                        duration: 0.8,
-                        ease: 'power3.inOut',
-                        onComplete: () => {
-                            preloader.style.display = 'none';
-                            lenis.start();
-                            heroReveal();
-                        }
-                    });
-                }
-            });
+        lenis.stop();
 
-            preloaderTl.to(preloaderChars, {
-                y: 0, opacity: 1,
-                duration: 0.7, stagger: 0.1,
-                ease: 'power4.out', delay: 0.2,
-            }).to({}, { duration: 0.4 });
-        }
+        const preloaderTl = gsap.timeline({
+            onComplete: () => {
+                gsap.to(preloader, {
+                    clipPath: 'inset(0 0 100% 0)',
+                    duration: 0.8,
+                    ease: 'power3.inOut',
+                    onComplete: () => {
+                        preloader.style.display = 'none';
+                        lenis.start();
+                        heroReveal();
+                    }
+                });
+            }
+        });
+
+        preloaderTl.to(preloaderChars, {
+            y: 0, opacity: 1,
+            duration: 0.7, stagger: 0.1,
+            ease: 'power4.out', delay: 0.2,
+        }).to({}, { duration: 0.4 });
     }
 
     // ============================
@@ -45,11 +40,6 @@
     function heroReveal() {
         const heroContent = document.querySelector('.hero-content');
         if (!heroContent) return;
-        if (reduceMotion) {
-            heroContent.classList.add('ready');
-            document.querySelectorAll('.hero-label, .hero-buttons').forEach(el => { el.style.opacity = '1'; });
-            return;
-        }
 
         // Setup accent word chars BEFORE making content visible
         const accent = document.querySelector('.hero h1 .accent-word');
@@ -121,34 +111,32 @@
     // ============================
     // Marquee
     // ============================
-    if (!reduceMotion) {
-        document.querySelectorAll('.marquee-track').forEach(track => {
-            const direction = parseFloat(track.dataset.direction) || -1;
-            const speed = parseFloat(track.dataset.speed) || 1;
-            const content = track.querySelector('.marquee-content');
-            const contentWidth = content.offsetWidth;
+    document.querySelectorAll('.marquee-track').forEach(track => {
+        const direction = parseFloat(track.dataset.direction) || -1;
+        const speed = parseFloat(track.dataset.speed) || 1;
+        const content = track.querySelector('.marquee-content');
+        const contentWidth = content.offsetWidth;
 
-            gsap.set(track, { x: direction === -1 ? 0 : -contentWidth });
+        gsap.set(track, { x: direction === -1 ? 0 : -contentWidth });
 
-            const marqueeAnim = gsap.to(track, {
-                x: direction === -1 ? -contentWidth : 0,
-                duration: 30 / speed, ease: 'none', repeat: -1,
-            });
-
-            let scrollVelocity = 0;
-            lenis.on('scroll', (e) => { scrollVelocity = Math.abs(e.velocity); });
-            gsap.ticker.add(() => {
-                marqueeAnim.timeScale(1 + scrollVelocity * 0.3);
-                scrollVelocity *= 0.95;
-            });
+        const marqueeAnim = gsap.to(track, {
+            x: direction === -1 ? -contentWidth : 0,
+            duration: 30 / speed, ease: 'none', repeat: -1,
         });
-    }
+
+        let scrollVelocity = 0;
+        lenis.on('scroll', (e) => { scrollVelocity = Math.abs(e.velocity); });
+        gsap.ticker.add(() => {
+            marqueeAnim.timeScale(1 + scrollVelocity * 0.3);
+            scrollVelocity *= 0.95;
+        });
+    });
 
     // ============================
     // About — clip-path reveal
     // ============================
     const aboutCard = document.querySelector('.about-card');
-    if (aboutCard && !reduceMotion) {
+    if (aboutCard) {
         gsap.to('.about-card', {
             clipPath: 'inset(0% 0% 0% 0% round 24px)',
             ease: 'power2.out',
@@ -176,26 +164,22 @@
     // ============================
     // Section headers
     // ============================
-    if (!reduceMotion) {
-        gsap.utils.toArray('.section-title .word').forEach((word, i) => {
-            gsap.from(word, {
-                y: '100%', opacity: 0, duration: 0.7, delay: i * 0.1, ease: 'power4.out',
-                scrollTrigger: {
-                    trigger: word.closest('.section-header'),
-                    start: 'top 85%', toggleActions: 'play none none none'
-                }
-            });
+    gsap.utils.toArray('.section-title .word').forEach((word, i) => {
+        gsap.from(word, {
+            y: '100%', opacity: 0, duration: 0.7, delay: i * 0.1, ease: 'power4.out',
+            scrollTrigger: {
+                trigger: word.closest('.section-header'),
+                start: 'top 85%', toggleActions: 'play none none none'
+            }
         });
-    }
+    });
 
-    if (!reduceMotion) {
-        gsap.utils.toArray('.section-subtitle').forEach(sub => {
-            gsap.from(sub, {
-                opacity: 0, y: 20, duration: 0.6, ease: 'power3.out',
-                scrollTrigger: { trigger: sub, start: 'top 90%', toggleActions: 'play none none none' }
-            });
+    gsap.utils.toArray('.section-subtitle').forEach(sub => {
+        gsap.from(sub, {
+            opacity: 0, y: 20, duration: 0.6, ease: 'power3.out',
+            scrollTrigger: { trigger: sub, start: 'top 90%', toggleActions: 'play none none none' }
         });
-    }
+    });
 
     // ============================
     // Services — Tabs
@@ -214,9 +198,7 @@
             tabPanels.forEach(panel => {
                 if (panel.dataset.panel === target) {
                     panel.classList.add('active');
-                    if (!reduceMotion) {
-                        gsap.fromTo(panel, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' });
-                    }
+                    gsap.fromTo(panel, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' });
                 } else {
                     panel.classList.remove('active');
                 }
@@ -227,45 +209,37 @@
     // ============================
     // Process cards
     // ============================
-    if (!reduceMotion) {
-        gsap.from('.process-card', {
-            opacity: 0, y: 60, scale: 0.95,
-            duration: 0.8, stagger: 0.12, ease: 'power3.out',
-            scrollTrigger: { trigger: '.process-grid', start: 'top 82%', toggleActions: 'play none none none' }
-        });
-    }
+    gsap.from('.process-card', {
+        opacity: 0, y: 60, scale: 0.95,
+        duration: 0.8, stagger: 0.12, ease: 'power3.out',
+        scrollTrigger: { trigger: '.process-grid', start: 'top 82%', toggleActions: 'play none none none' }
+    });
 
     // ============================
     // Cases bento reveal
     // ============================
-    if (!reduceMotion) {
-        gsap.from('.case-card', {
-            opacity: 0, y: 50, scale: 0.95,
-            duration: 0.7, stagger: 0.1, ease: 'power3.out',
-            scrollTrigger: { trigger: '.cases-bento', start: 'top 80%', toggleActions: 'play none none none' }
-        });
-    }
+    gsap.from('.case-card', {
+        opacity: 0, y: 50, scale: 0.95,
+        duration: 0.7, stagger: 0.1, ease: 'power3.out',
+        scrollTrigger: { trigger: '.cases-bento', start: 'top 80%', toggleActions: 'play none none none' }
+    });
 
     // ============================
     // Gallery reveal
     // ============================
-    if (!reduceMotion) {
-        gsap.from('.gallery-item', {
-            opacity: 0, y: 50, scale: 0.95,
-            duration: 0.7, stagger: 0.08, ease: 'power3.out',
-            scrollTrigger: { trigger: '.gallery-grid', start: 'top 80%', toggleActions: 'play none none none' }
-        });
-    }
+    gsap.from('.gallery-item', {
+        opacity: 0, y: 50, scale: 0.95,
+        duration: 0.7, stagger: 0.08, ease: 'power3.out',
+        scrollTrigger: { trigger: '.gallery-grid', start: 'top 80%', toggleActions: 'play none none none' }
+    });
 
     // ============================
     // CTA reveal
     // ============================
-    if (!reduceMotion) {
-        gsap.from('.cta-card', {
-            scale: 0.85, opacity: 0, duration: 1, ease: 'power3.out',
-            scrollTrigger: { trigger: '.cta', start: 'top 75%', toggleActions: 'play none none none' }
-        });
-    }
+    gsap.from('.cta-card', {
+        scale: 0.85, opacity: 0, duration: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: '.cta', start: 'top 75%', toggleActions: 'play none none none' }
+    });
 
     // ============================
     // FIX #6: Lazy-load Yandex Map

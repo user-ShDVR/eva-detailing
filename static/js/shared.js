@@ -36,10 +36,9 @@
     // Init GSAP + Lenis
     // ============================
     gsap.registerPlugin(ScrollTrigger);
-    const reduceMotion = window.matchMedia('(max-width: 768px), (prefers-reduced-motion: reduce)').matches;
 
     const lenis = new Lenis({
-        duration: reduceMotion ? 0.75 : 1.2,
+        duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smooth: true,
     });
@@ -51,16 +50,14 @@
     // ============================
     // Blob Parallax
     // ============================
-    if (!reduceMotion) {
-        document.querySelectorAll('.blob').forEach(blob => {
-            const speed = parseFloat(blob.dataset.speed) || 0.05;
-            gsap.to(blob, {
-                y: () => window.innerHeight * speed * 10,
-                ease: 'none',
-                scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 1 }
-            });
+    document.querySelectorAll('.blob').forEach(blob => {
+        const speed = parseFloat(blob.dataset.speed) || 0.05;
+        gsap.to(blob, {
+            y: () => window.innerHeight * speed * 10,
+            ease: 'none',
+            scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 1 }
         });
-    }
+    });
 
     // ============================
     // Navbar
@@ -103,11 +100,6 @@
     const mobileNav = document.getElementById('mobileNav');
     burger.addEventListener('click', () => {
         mobileNav.classList.toggle('active');
-    });
-    mobileNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-        });
     });
 
     // ============================
@@ -255,6 +247,5 @@
     // Expose lenis globally for child templates
     window.__lenis = lenis;
     window.__analytics = analytics;
-    window.__reduceMotion = reduceMotion;
 
 })();
