@@ -3,6 +3,7 @@
 
     const lenis = window.__lenis;
     const analytics = window.__analytics;
+    const disableScrollAnimations = Boolean(window.__disableScrollAnimations);
 
     // ============================
     // Preloader
@@ -96,47 +97,51 @@
         // Scroll indicator
         tl.to('.hero-scroll', { opacity: 0.6, duration: 0.8, ease: 'power2.out' }, '-=0.2');
 
-        // Hero parallax on scroll
-        gsap.to('.hero-content', {
-            y: -150, opacity: 0, ease: 'none',
-            scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-        });
+        if (!disableScrollAnimations) {
+            // Hero parallax on scroll
+            gsap.to('.hero-content', {
+                y: -150, opacity: 0, ease: 'none',
+                scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+            });
 
-        gsap.to('.hero-scroll', {
-            opacity: 0, ease: 'none',
-            scrollTrigger: { trigger: '.hero', start: '80% bottom', end: '90% bottom', scrub: true }
-        });
+            gsap.to('.hero-scroll', {
+                opacity: 0, ease: 'none',
+                scrollTrigger: { trigger: '.hero', start: '80% bottom', end: '90% bottom', scrub: true }
+            });
+        }
     }
 
     // ============================
     // Marquee
     // ============================
-    document.querySelectorAll('.marquee-track').forEach(track => {
-        const direction = parseFloat(track.dataset.direction) || -1;
-        const speed = parseFloat(track.dataset.speed) || 1;
-        const content = track.querySelector('.marquee-content');
-        const contentWidth = content.offsetWidth;
+    if (!disableScrollAnimations) {
+        document.querySelectorAll('.marquee-track').forEach(track => {
+            const direction = parseFloat(track.dataset.direction) || -1;
+            const speed = parseFloat(track.dataset.speed) || 1;
+            const content = track.querySelector('.marquee-content');
+            const contentWidth = content.offsetWidth;
 
-        gsap.set(track, { x: direction === -1 ? 0 : -contentWidth });
+            gsap.set(track, { x: direction === -1 ? 0 : -contentWidth });
 
-        const marqueeAnim = gsap.to(track, {
-            x: direction === -1 ? -contentWidth : 0,
-            duration: 30 / speed, ease: 'none', repeat: -1,
+            const marqueeAnim = gsap.to(track, {
+                x: direction === -1 ? -contentWidth : 0,
+                duration: 30 / speed, ease: 'none', repeat: -1,
+            });
+
+            let scrollVelocity = 0;
+            lenis.on('scroll', (e) => { scrollVelocity = Math.abs(e.velocity); });
+            gsap.ticker.add(() => {
+                marqueeAnim.timeScale(1 + scrollVelocity * 0.3);
+                scrollVelocity *= 0.95;
+            });
         });
-
-        let scrollVelocity = 0;
-        lenis.on('scroll', (e) => { scrollVelocity = Math.abs(e.velocity); });
-        gsap.ticker.add(() => {
-            marqueeAnim.timeScale(1 + scrollVelocity * 0.3);
-            scrollVelocity *= 0.95;
-        });
-    });
+    }
 
     // ============================
     // About — clip-path reveal
     // ============================
     const aboutCard = document.querySelector('.about-card');
-    if (aboutCard) {
+    if (aboutCard && !disableScrollAnimations) {
         gsap.to('.about-card', {
             clipPath: 'inset(0% 0% 0% 0% round 24px)',
             ease: 'power2.out',
@@ -164,22 +169,26 @@
     // ============================
     // Section headers
     // ============================
-    gsap.utils.toArray('.section-title .word').forEach((word, i) => {
-        gsap.from(word, {
-            y: '100%', opacity: 0, duration: 0.7, delay: i * 0.1, ease: 'power4.out',
-            scrollTrigger: {
-                trigger: word.closest('.section-header'),
-                start: 'top 85%', toggleActions: 'play none none none'
-            }
+    if (!disableScrollAnimations) {
+        gsap.utils.toArray('.section-title .word').forEach((word, i) => {
+            gsap.from(word, {
+                y: '100%', opacity: 0, duration: 0.7, delay: i * 0.1, ease: 'power4.out',
+                scrollTrigger: {
+                    trigger: word.closest('.section-header'),
+                    start: 'top 85%', toggleActions: 'play none none none'
+                }
+            });
         });
-    });
+    }
 
-    gsap.utils.toArray('.section-subtitle').forEach(sub => {
-        gsap.from(sub, {
-            opacity: 0, y: 20, duration: 0.6, ease: 'power3.out',
-            scrollTrigger: { trigger: sub, start: 'top 90%', toggleActions: 'play none none none' }
+    if (!disableScrollAnimations) {
+        gsap.utils.toArray('.section-subtitle').forEach(sub => {
+            gsap.from(sub, {
+                opacity: 0, y: 20, duration: 0.6, ease: 'power3.out',
+                scrollTrigger: { trigger: sub, start: 'top 90%', toggleActions: 'play none none none' }
+            });
         });
-    });
+    }
 
     // ============================
     // Services — Tabs
@@ -209,37 +218,45 @@
     // ============================
     // Process cards
     // ============================
-    gsap.from('.process-card', {
-        opacity: 0, y: 60, scale: 0.95,
-        duration: 0.8, stagger: 0.12, ease: 'power3.out',
-        scrollTrigger: { trigger: '.process-grid', start: 'top 82%', toggleActions: 'play none none none' }
-    });
+    if (!disableScrollAnimations) {
+        gsap.from('.process-card', {
+            opacity: 0, y: 60, scale: 0.95,
+            duration: 0.8, stagger: 0.12, ease: 'power3.out',
+            scrollTrigger: { trigger: '.process-grid', start: 'top 82%', toggleActions: 'play none none none' }
+        });
+    }
 
     // ============================
     // Cases bento reveal
     // ============================
-    gsap.from('.case-card', {
-        opacity: 0, y: 50, scale: 0.95,
-        duration: 0.7, stagger: 0.1, ease: 'power3.out',
-        scrollTrigger: { trigger: '.cases-bento', start: 'top 80%', toggleActions: 'play none none none' }
-    });
+    if (!disableScrollAnimations) {
+        gsap.from('.case-card', {
+            opacity: 0, y: 50, scale: 0.95,
+            duration: 0.7, stagger: 0.1, ease: 'power3.out',
+            scrollTrigger: { trigger: '.cases-bento', start: 'top 80%', toggleActions: 'play none none none' }
+        });
+    }
 
     // ============================
     // Gallery reveal
     // ============================
-    gsap.from('.gallery-item', {
-        opacity: 0, y: 50, scale: 0.95,
-        duration: 0.7, stagger: 0.08, ease: 'power3.out',
-        scrollTrigger: { trigger: '.gallery-grid', start: 'top 80%', toggleActions: 'play none none none' }
-    });
+    if (!disableScrollAnimations) {
+        gsap.from('.gallery-item', {
+            opacity: 0, y: 50, scale: 0.95,
+            duration: 0.7, stagger: 0.08, ease: 'power3.out',
+            scrollTrigger: { trigger: '.gallery-grid', start: 'top 80%', toggleActions: 'play none none none' }
+        });
+    }
 
     // ============================
     // CTA reveal
     // ============================
-    gsap.from('.cta-card', {
-        scale: 0.85, opacity: 0, duration: 1, ease: 'power3.out',
-        scrollTrigger: { trigger: '.cta', start: 'top 75%', toggleActions: 'play none none none' }
-    });
+    if (!disableScrollAnimations) {
+        gsap.from('.cta-card', {
+            scale: 0.85, opacity: 0, duration: 1, ease: 'power3.out',
+            scrollTrigger: { trigger: '.cta', start: 'top 75%', toggleActions: 'play none none none' }
+        });
+    }
 
     // ============================
     // FIX #6: Lazy-load Yandex Map
