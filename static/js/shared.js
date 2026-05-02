@@ -36,6 +36,7 @@
     // Init GSAP + Lenis
     // ============================
     gsap.registerPlugin(ScrollTrigger);
+    const disableScrollAnimations = window.matchMedia('(max-width: 768px)').matches;
 
     const lenis = new Lenis({
         duration: 1.2,
@@ -50,14 +51,16 @@
     // ============================
     // Blob Parallax
     // ============================
-    document.querySelectorAll('.blob').forEach(blob => {
-        const speed = parseFloat(blob.dataset.speed) || 0.05;
-        gsap.to(blob, {
-            y: () => window.innerHeight * speed * 10,
-            ease: 'none',
-            scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 1 }
+    if (!disableScrollAnimations) {
+        document.querySelectorAll('.blob').forEach(blob => {
+            const speed = parseFloat(blob.dataset.speed) || 0.05;
+            gsap.to(blob, {
+                y: () => window.innerHeight * speed * 10,
+                ease: 'none',
+                scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 1 }
+            });
         });
-    });
+    }
 
     // ============================
     // Navbar
@@ -247,5 +250,6 @@
     // Expose lenis globally for child templates
     window.__lenis = lenis;
     window.__analytics = analytics;
+    window.__disableScrollAnimations = disableScrollAnimations;
 
 })();
