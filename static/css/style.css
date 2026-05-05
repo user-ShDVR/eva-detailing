@@ -48,6 +48,12 @@ body {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .bg-blobs {
+        display: none; /* самый простой вариант */
+    }
+}
+
 .blob {
     position: absolute;
     border-radius: 50%;
@@ -135,6 +141,13 @@ section { position: relative; z-index: 1; }
     backdrop-filter: blur(24px);
     border-bottom: 1px solid var(--glass-border);
     transition: all .4s;
+}
+
+@media (min-width: 1024px) {
+    .navbar {
+        background: rgba(10, 10, 15, 0.85);
+        backdrop-filter: blur(24px);
+    }
 }
 
 .navbar.scrolled {
