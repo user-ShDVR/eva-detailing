@@ -12,6 +12,14 @@
         const preloaderChars = preloader.querySelectorAll('.char');
         lenis.stop();
 
+        // 🔧 FIX #2: Предохранитель — через 3 секунды включаем скролл в любом случае
+        const safetyTimeout = setTimeout(() => {
+            if (lenis && preloader.style.display !== 'none') {
+                console.warn('Preloader safety timeout — forcing scroll start');
+                lenis.start();
+            }
+        }, 3000);
+
         const preloaderTl = gsap.timeline({
             onComplete: () => {
                 gsap.to(preloader, {
@@ -19,6 +27,7 @@
                     duration: 0.8,
                     ease: 'power3.inOut',
                     onComplete: () => {
+                        clearTimeout(safetyTimeout); // отменяем предохранитель, если всё ок
                         preloader.style.display = 'none';
                         lenis.start();
                         heroReveal();
@@ -124,12 +133,15 @@
             duration: 30 / speed, ease: 'none', repeat: -1,
         });
 
-        let scrollVelocity = 0;
-        lenis.on('scroll', (e) => { scrollVelocity = Math.abs(e.velocity); });
-        gsap.ticker.add(() => {
-            marqueeAnim.timeScale(1 + scrollVelocity * 0.3);
-            scrollVelocity *= 0.95;
-        });
+        // 🔧 FIX #5: Marquee ticker только на десктопе (ширина >= 1024px)
+        if (window.innerWidth >= 1024) {
+            let scrollVelocity = 0;
+            lenis.on('scroll', (e) => { scrollVelocity = Math.abs(e.velocity); });
+            gsap.ticker.add(() => {
+                marqueeAnim.timeScale(1 + scrollVelocity * 0.3);
+                scrollVelocity *= 0.95;
+            });
+        }
     });
 
     // ============================
